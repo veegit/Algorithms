@@ -1,20 +1,20 @@
 package com.vee.datastructures;
 
-public class Node {
+public class Node<M extends Object> {
 	
-	protected int data;
-	private Node link;
+	protected M data;
+	private Node<M> link;
 	
-	public int getData() {
+	public M getData() {
 		return data;
 	}
-	public void setData(int data) {
+	public void setData(M data) {
 		this.data = data;
 	}
-	Node getLink() {
+	Node<M> getLink() {
 		return link;
 	}
-	void setLink(Node link) {
+	void setLink(Node<M> link) {
 		this.link = link;
 	}
 	
