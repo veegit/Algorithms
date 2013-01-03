@@ -2,6 +2,7 @@ package com.vee.test;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -11,8 +12,8 @@ import java.util.Vector;
 
 import com.vee.datastructures.LinkedList;
 import com.vee.datastructures.LinkedListIterator;
-import com.vee.datastructures.LinkedStack;
 import com.vee.datastructures.graph.DFS;
+import com.vee.datastructures.sort.QuickSort;
 
 public class SeamlessCricketers {
     public int[][] adjMatrix;
@@ -38,7 +39,9 @@ public class SeamlessCricketers {
     		try {
     			String line;
     			int cnt = -1;
-    			bufferedReader = new BufferedReader(new FileReader(file));
+    			bufferedReader = new BufferedReader(new InputStreamReader(
+    					getClass().getClassLoader().getResourceAsStream(file)));
+    			
     			while((line = bufferedReader.readLine()) != null) {
     				Name name = new Name(line);
     				name.setId(++cnt);
@@ -159,7 +162,8 @@ public class SeamlessCricketers {
     	try {
     		try {
     			String line;
-    			bufferedReader = new BufferedReader(new FileReader(edgesFile));
+    			bufferedReader = new BufferedReader(new InputStreamReader(
+    					getClass().getClassLoader().getResourceAsStream(edgesFile)));
     			while((line = bufferedReader.readLine()) != null) {
     				String[] edgeArray = line.split(",");
     				Name[] edge = new Name[2];
@@ -208,7 +212,7 @@ public class SeamlessCricketers {
     					length[j].tail = (i)+ " " + length[i].tail;
     				}
     			
-    	Sort<Tuple<Integer,String>> s = new Sort<Tuple<Integer,String>>(){
+    	QuickSort<Tuple<Integer,String>> s = new QuickSort<Tuple<Integer,String>>(){
     		@Override
     		public int compare(Tuple<Integer,String> o1, Tuple<Integer,String> o2) {
 				return o2.head - o1.head;
@@ -231,7 +235,7 @@ public class SeamlessCricketers {
     
     public static void main(String args[]) {
     		SeamlessCricketers sc = new SeamlessCricketers();
-    		sc.readFile("all_uniq_players.txt");
+    		sc.readFile("all_unique_players.txt");
     		sc.prepareMatrix();
     		//sc.display();
     		//sc.displayMatrix();

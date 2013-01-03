@@ -2,7 +2,7 @@ package com.vee.datastructures.graph;
 
 import com.vee.datastructures.LinkedList;
 import com.vee.datastructures.LinkedListIterator;
-import com.vee.test.Sort;
+import com.vee.datastructures.sort.QuickSort;
 import com.vee.test.Tuple;
 
 public class DFS {
@@ -91,7 +91,7 @@ public class DFS {
     		array[i] = new Tuple<Integer,Integer>(i,postvisit[i]);
     	}
     	
-    	Sort<Tuple<Integer,Integer>> s = new Sort<Tuple<Integer,Integer>>() {
+    	QuickSort<Tuple<Integer,Integer>> s = new QuickSort<Tuple<Integer,Integer>>() {
     		@Override
     		public int compare(Tuple<Integer,Integer> o1, Tuple<Integer,Integer> o2) {
 				return o2.tail - o1.tail;
