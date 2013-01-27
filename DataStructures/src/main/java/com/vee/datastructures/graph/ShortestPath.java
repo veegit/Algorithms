@@ -12,7 +12,7 @@ public class ShortestPath {
 	int [][]adjMatrix;
 	LinkedList<Tuple<Integer,Integer>>[] adjList;
 	int size;
-	int src = 0;
+	int src = 2;
 	public int []shortesPathDistance;
 	public int []shortesPathVertices;
 	
@@ -25,7 +25,7 @@ public class ShortestPath {
 		this.size = size;
 		shortesPathDistance = new int[size];
 		shortesPathVertices = new int[size];
-		toAdjList();
+		//toAdjList();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -134,7 +134,7 @@ public class ShortestPath {
 	}
 	
 	public static void main(String args[]){
-		int X[][] =
+		int Y[][] =
 		   {
 		    {0,1,0,1,0,0,0,0,0,0},
 		    {0,0,1,0,0,1,0,0,0,0},
@@ -147,15 +147,24 @@ public class ShortestPath {
 		    {0,0,0,0,0,0,0,1,0,0},
 		    {0,0,0,0,0,0,0,0,1,0}
 		   };
+		{
+		  int X[][] = 
+		  {
+		    {0,2,1,0},
+		    {2,0,5,1},
+		    {1,5,0,5},
+		    {0,1,5,0}
+		   };
 		  int size = X.length;
 		  ShortestPath sp = new ShortestPath(X, size);
-		  sp.bellmanFordShortestPath();
-		  for (int i = 0; i < sp.shortesPathDistance.length; i++)
-			 System.out.print(sp.shortesPathDistance[i] + "  ");
+		  //sp.bellmanFordShortestPath();
+		  //for (int i = 0; i < sp.shortesPathDistance.length; i++)
+		//	 System.out.print(sp.shortesPathDistance[i] + "  ");
 		  sp.djikstrasShortesPath();
 		  System.out.println();
 		  for (int i = 0; i < sp.shortesPathDistance.length; i++)
 			 System.out.print(sp.shortesPathDistance[i] + "  ");
 	}
 
+}
 }
