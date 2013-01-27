@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.util;
 
 public class Tuple<M,N> {
 	public M head;

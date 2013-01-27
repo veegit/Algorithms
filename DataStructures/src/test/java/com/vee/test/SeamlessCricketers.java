@@ -14,6 +14,7 @@ import com.vee.datastructures.LinkedList;
 import com.vee.datastructures.LinkedListIterator;
 import com.vee.datastructures.graph.DFS;
 import com.vee.datastructures.sort.QuickSort;
+import com.vee.datastructures.util.Tuple;
 
 public class SeamlessCricketers {
     public int[][] adjMatrix;

@@ -3,7 +3,7 @@ package com.vee.datastructures.graph;
 import com.vee.datastructures.LinkedList;
 import com.vee.datastructures.LinkedListIterator;
 import com.vee.datastructures.tree.BST;
-import com.vee.test.Tuple;
+import com.vee.datastructures.util.Tuple;
 
 public class ShortestPath {
 

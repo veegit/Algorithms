@@ -2,6 +2,8 @@ package com.vee.test;
 
 import java.util.Comparator;
 
+import com.vee.datastructures.util.Tuple;
+
 public class AllSort<M extends Object> implements Comparator<M>{
 	public M[] array;
 	public int size;
