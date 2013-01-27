@@ -8,22 +8,23 @@ public class MergeSort<M> implements Comparator<M> {
 
 	  private int number;
 
-	  public void sort(M[] values) {
+	  public M[] mergeSort(M[] values) {
 	    this.numbers = values;
 	    number = values.length;
 	    this.helper = numbers.clone();
-	    mergesort(0, number - 1);
+	    sort(0, number - 1);
+	    return numbers;
 	  }
 
-	  private void mergesort(int low, int high) {
+	  private void sort(int low, int high) {
 	    // Check if low is smaller then high, if not then the array is sorted
 	    if (low < high) {
 	      // Get the index of the element which is in the middle
 	      int middle = low + (high - low) / 2;
 	      // Sort the left side of the array
-	      mergesort(low, middle);
+	      sort(low, middle);
 	      // Sort the right side of the array
-	      mergesort(middle + 1, high);
+	      sort(middle + 1, high);
 	      // Combine them both
 	      merge(low, middle, high);
 	    }
