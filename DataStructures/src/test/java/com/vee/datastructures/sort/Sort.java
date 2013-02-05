@@ -6,9 +6,11 @@ public class Sort {
 	
 	public static void main(String args[]){
 		//Integer in[] = {10, 1, 200, 31, 24, 118, 122, 3, 151, 104};
-		Integer in[] = getRandomArray();
-		testQuickSort(in);
-		testHeapSort(in);
+		Integer in[] = {5,3,4,2};
+		//Integer in[] = getRandomArray();
+		//testQuickSort(in);
+		//testHeapSort(in);
+		testMergeSort(in);
 	}
 	
 	public static void testQuickSort(Integer[] in) {
