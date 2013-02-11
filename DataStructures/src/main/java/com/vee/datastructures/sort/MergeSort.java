@@ -5,6 +5,7 @@ import java.util.Comparator;
 public class MergeSort<M> implements Comparator<M> {
 	  private M[] numbers;
 	  private M[] helper;
+	  int count = 0;
 
 	  private int number;
 
@@ -17,6 +18,7 @@ public class MergeSort<M> implements Comparator<M> {
 	  }
 
 	  private void sort(int low, int high) {
+		System.out.println("SORT: Low = " + low + " High = " + high);
 	    // Check if low is smaller then high, if not then the array is sorted
 	    if (low < high) {
 	      // Get the index of the element which is in the middle
@@ -31,7 +33,7 @@ public class MergeSort<M> implements Comparator<M> {
 	  }
 
 	  private void merge(int low, int middle, int high) {
-
+		  System.out.println("MERGE: Low = " + low + " High = " + high);
 	    // Copy both parts into the helper array
 	    for (int i = low; i <= high; i++) {
 	      helper[i] = numbers[i];
@@ -50,14 +52,21 @@ public class MergeSort<M> implements Comparator<M> {
 	        numbers[k] = helper[j];
 	        j++;
 	      }
+	      count++;
 	      k++;
 	    }
 	    // Copy the rest of the left side of the array into the target array
+	    /* Why not for right? = since the right side if greater is already placed
+	       correctly in the numbers array */
 	    while (i <= middle) {
 	      numbers[k] = helper[i];
 	      k++;
 	      i++;
+	      count++;
 	    }
+	    System.out.println("COUNT: " + count);
+	    for (int k2 = low; k2 <= high; k2++)
+			System.out.print(numbers[k2] + " ");
 
 	  }
 
