@@ -25,6 +25,10 @@ public class LinkedList<M extends Object> {
 		return false;
 	}
 	
+	public Node<M> getHeader() {
+		return header;
+	}
+	
 	public void insertAfter(M data, M after) {
 		if(isEmpty()) {
 			insertFirst(data);
@@ -62,6 +66,11 @@ public class LinkedList<M extends Object> {
 		Node<M> last = findLast();
 		last.setLink(newNode);
 		size++;
+	}
+	
+	public void join(LinkedList<M> list) {
+		Node<M> last = findLast();
+		last.setLink(list.getHeader().getLink());
 	}
 	
 	public void remove(M data) {
@@ -172,7 +181,15 @@ public class LinkedList<M extends Object> {
 		ll.insertEnd(16);
 		ll.insertAfter(15, 13);
 		ll.remove(13);
+		ll.display();
 		
+		LinkedList<Integer> ll1 = new LinkedList<Integer>();
+		ll1.insertEnd(0);
+		ll1.insertEnd(1);
+		ll1.insertEnd(2);
+		ll1.insertEnd(3);
+		ll1.insertEnd(6);
+		ll.join(ll1);
 		ll.display();
 	}
 }

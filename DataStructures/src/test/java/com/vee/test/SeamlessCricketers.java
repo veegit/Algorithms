@@ -1,5 +1,22 @@
 package com.vee.test;
-
+/**
+ * Problem:
+ * 
+ * You have a list of people with First Name (F) and Last Name (L)
+ * F1L1,F2L2,F3L3,L3F2,F1L2,L2F1
+ * Now you have to find the longest list of names which form a chain 
+ * e.g. F3L3-L3F2-F2L2-L2F1 for above problem
+ * 
+ * Answer:
+ * Looks a Hamiltonian Path but that's NP Hard, so an optimised solution
+ * is needed.
+ * 
+ * This is part of a game which I played with some friends while young to list 
+ * out names of cricketers in a chain
+ * Saqlain Mushtaq Mohammed Amir Sohail Khan Mohammed Asif Iqbal Qasim Umar 
+ * Gul Mohammed Wasim Akram Raza Hasan Raza = 17
+ * The idea is to beat this list via an algo
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.InputStreamReader;

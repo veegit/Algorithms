@@ -1,31 +1,10 @@
 package com.vee.test;
 /**
- * if a building has 25 floors-the elevator will show-
-1 	1
-2 	2
-3 	3
-4 	5
-5 	6
-6 	7
-7 	8
-8 	9
-9 	10
-10 	11
-11 	12
-12 	13
-13 	15
-14 	16
-15 	17
-16 	18
-17 	19
-18 	20
-19 	21
-20 	22
-21 	23
-22 	25
-23 	26
-24 	27
-25 	28
+ * Imagine a building where there are no such floor numbers which have 4 in any
+ * of their digits. Find the floor number you would find in such a building 
+ * given an actual floor number
+ * e.g if a building has 25 floors-the elevator will show-
+ * 25 	28
  * @author Narayanan
  *
  */

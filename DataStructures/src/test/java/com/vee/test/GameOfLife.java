@@ -1,9 +1,7 @@
 package com.vee.test;
 
-import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Iterator;
-import java.util.Set;
 
 public class GameOfLife {
 	Hashtable<Cell,Cell> currentShape = new Hashtable<Cell,Cell>();
