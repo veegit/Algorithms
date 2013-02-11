@@ -34,23 +34,16 @@ public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 		while (i <= j) {
 			// If the current value from the left list is smaller then the pivot
 			// element then get the next element from the left list
-			while (compare(array[i],pivot) < 0) {
-				i++;
-			}
+			while (compare(array[i],pivot) < 0) i++;
 			// If the current value from the right list is larger then the pivot
 			// element then get the next element from the right list
-			while (compare(array[j],pivot) > 0) {
-				j--;
-			}
-				// If we have found a value in the left list which is larger then
+			while (compare(array[j],pivot) > 0) j--;
+		    // If we have found a value in the left list which is larger then
 			// the pivot element and if we have found a value in the right list
 			// which is smaller then the pivot element then we exchange the values.
 			// As we are done we can increase i and j
-			if (i <= j) {
-				exchange(array, i, j);
-				i++;
-				j--;
-			}
+			if (i <= j)
+				exchange(array, i++, j--);
 		}
 		// Recursion
 		if (low < j)
@@ -64,20 +57,29 @@ public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 	}
 	
 	void runQuickSort_1(int low, int high){
-		if(low >= high)
+		if(low >= high || low < 0 || high > size-1)
 			return;
-		int index = partition(low, high);
-		runQuickSort_1(low,index-1);
-		runQuickSort_1(index+1,high);
+		int i = low, j = high;
+		M pivot = array[low];
+		while(i<=j) {
+			while(compare(array[i],pivot) < 0) i++;
+		    while(compare(array[j],pivot) > 0) j--;
+		    //Only swap when they have nt crossed each other
+		    if(i<=j)
+		    	exchange(array, i++, j--);
+		}
+		if (low < j)
+			runQuickSort_1(low,j);
+		if (i < high)
+			runQuickSort_1(j,high);
 	}
 	//5 5 3 4 2
 	int partition(int low,int high) {
-		M pivot_value = array[low];
-		int i = low;
-		int j = high;
+		int i = low, j = high;
+		M pivot = array[low];
 		while(i<j) {
-			while(i < high && compare(array[i],pivot_value) <= 0) i++;
-		    while(j > low && compare(array[j],pivot_value) > 0) j--;
+			while(compare(array[i],pivot) <= 0) i++;
+		    while(compare(array[j],pivot) > 0) j--;
 		    //Only swap when they have nt crossed each other
 		    if(i<j)
 		    	exchange(array, i++, j--);
