@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.divnconq;
 /**
  * 
  * @author narayanan_venkiteswaran

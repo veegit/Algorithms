@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.dynprog;
 
 public class EditDistance {
 	String source;

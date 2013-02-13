@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.dynprog;
 
 import java.util.HashSet;
 import java.util.Set;

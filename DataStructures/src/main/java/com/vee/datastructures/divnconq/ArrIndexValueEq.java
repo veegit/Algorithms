@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.divnconq;
 
 /**
  * You are given a sorted (from smallest to largest) array A of n distinct 
