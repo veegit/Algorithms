@@ -6,22 +6,48 @@ public class Sort {
 	
 	public static void main(String args[]){
 		//Integer in[] = {10, 1, 200, 31, 24, 118, 122, 3, 151, 104};
-		Integer in[] = {5,5,3,4,2};
 		//Integer in[] = getRandomArray();
-		testQuickSort(in);
+		{	Integer in[] = {5,3,4,2};
+			testQuickSort(in);
+		}
+		{	Integer in[] = {10, 1, 200, 31, 24, 118, 122, 3, 151, 104};
+			testQuickSort(in);
+		}
+		{	Integer in[] = {6,5,4,2};
+			testQuickSort(in);
+		}
+		{	Integer in[] = {1,10,100,1000};
+			testQuickSort(in);
+		}
 		//testHeapSort(in);
 		//testMergeSort(in);
 	}
 	
 	public static void testQuickSort(Integer[] in) {
-		Integer[] out = new QuickSort<Integer>().quickSort(in);
-		long start = System.currentTimeMillis();
-		System.out.println("QuickSort");
+		Integer []out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.FIRST);
+		//System.out.println("QuickSort");
 		for (int i = 0; i < out.length; i++) {
 			System.out.print(out[i] + " ");
 		}
 		System.out.println();
-		System.out.println(getTime(start));
+		out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.FIRST_2);
+		//System.out.println("QuickSort");
+		for (int i = 0; i < out.length; i++) {
+			System.out.print(out[i] + " ");
+		}
+		System.out.println();
+		out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.LAST);
+		//System.out.println("QuickSort");
+		for (int i = 0; i < out.length; i++) {
+			System.out.print(out[i] + " ");
+		}
+		System.out.println();
+		out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.MIDDLE);
+		//System.out.println("QuickSort");
+		for (int i = 0; i < out.length; i++) {
+			System.out.print(out[i] + " ");
+		}
+		System.out.println();
 	}
 	
 	public static void testMergeSort(Integer[] in) {
