@@ -1,12 +1,13 @@
 package com.vee.datastructures.sort;
 
 import java.util.Comparator;
+import java.util.Random;
 
 public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 	public M[] array;
 	public int size;
 	public int cnt=0;
-	public enum PIVOT {FIRST, MIDDLE, MEDIAN, FIRST_2,LAST};
+	public enum PIVOT {FIRST, MIDDLE, MEDIAN, FIRST_2,LAST,MIDDLE_2,RANDOM};
 		
 	public M[] quickSort(M[] a) {
 		return quickSort(a, PIVOT.FIRST);
@@ -19,14 +20,18 @@ public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 		}
 		array = a;
 		size = a.length;
+		cnt=0;
 		switch(pivot) {
 			case FIRST: runQuickSort(0,size - 1); break;
 			case FIRST_2: runQuickSort_First(0,size - 1); break;
 			case LAST: runQuickSort_Last(0,size - 1); break;
 			case MIDDLE: runQuickSort_Midd(0,size - 1); break;
+			case MIDDLE_2: runQuickSort_Middle(0,size - 1); break;
+			case MEDIAN: runQuickSort_Median(0,size - 1); break;
+			case RANDOM: runQuickSort_Random(0,size - 1); break;
 			default: runQuickSort_First(0,size - 1); 
 		}
-		//System.out.println("# of recursions " + cnt);
+		System.out.println("# of recursions " + cnt);
 		return array;
 	}
 	
@@ -65,6 +70,7 @@ public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 	}
 	
 	void runQuickSort(int low, int high){
+		cnt++;
 		if(low >= high)
 			return;
 		int index = partition(low,high);
@@ -86,14 +92,6 @@ public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 		exchange(array, low, j);
 		return j;
 	}
-	//6 5 4 2
-	void runQuickSort_First(int low, int high){
-		if(low >= high)
-			return;
-		int index = partition_2(low,high);
-		runQuickSort_First(low,index-1);
-		runQuickSort_First(index+1,high);
-	}
 	
 	int partition_2(int low,int high) {
 		int i = low+1, j = low+1;
@@ -108,8 +106,19 @@ public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 		exchange(array,low,j-1);// exchange rightmost element less than p
 		return j-1;
 	}
+
+	//6 5 4 2
+	void runQuickSort_First(int low, int high){
+		cnt++;
+		if(low >= high)
+			return;
+		int index = partition_2(low,high);
+		runQuickSort_First(low,index-1);
+		runQuickSort_First(index+1,high);
+	}
 	
 	void runQuickSort_Last(int low, int high){
+		cnt++;
 		if(low >= high)
 			return;
 		exchange(array, low, high);
@@ -125,9 +134,60 @@ public class QuickSort <M> extends BaseSort<M> implements Comparator<M>{
 		int midd = low + (high-low)/2;
 		exchange(array, low, midd);
 		int index = partition_2(low,high);
-		if (low < index-1)
 		runQuickSort_Midd(low,index-1);
-		if (index+1 < high)
 		runQuickSort_Midd(index+1,high);
+	}
+	
+	void runQuickSort_Median(int low, int high){
+		cnt++;
+		if(low >=high)
+			return;
+		int mid = low+(high-low)/2;
+		int median = calcMedian(low, mid, high);
+		exchange(array,low,median);
+		int index = partition_2(low, high);
+		//if (low < index-1)
+		runQuickSort_Median(low, index-1);
+		//if (index+1 < high)
+		runQuickSort_Median(index+1, high);
+	}
+	
+	void runQuickSort_Random(int low, int high){
+		cnt++;
+		if(low >=high)
+			return;
+		int random = calcRandom(low, high);
+		exchange(array,low,random);
+		int index = partition_2(low, high);
+		//if (low < index-1)
+		runQuickSort_Random(low, index-1);
+		//if (index+1 < high)
+		runQuickSort_Random(index+1, high);
+	}
+	
+	int calcMedian(int a,int b, int c) {
+		if (compare(array[a], array[b])>0) {
+		  if (compare(array[b],array[c])>0) {
+		    return b;
+		  } else if (compare(array[a],array[c])>0) {
+		    return c;
+		  } else {
+		    return a;
+		  }
+		} 
+		else {
+		  if (compare(array[a],array[c])>0) {
+		    return a;
+		  } else if (compare(array[b],array[c])>0) {
+		    return c;
+		  } else {
+		    return b;
+		  }
+		}
+	}
+	
+	int calcRandom(int low, int high) {
+		int range = high - low ;
+	    return (int) (low+range * Math.random());
 	}
 }

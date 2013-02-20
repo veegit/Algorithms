@@ -24,26 +24,38 @@ public class Sort {
 	}
 	
 	public static void testQuickSort(Integer[] in) {
-		Integer []out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.FIRST);
-		//System.out.println("QuickSort");
+		System.out.println("\nFirst QuickSort");
+		Integer []out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.FIRST);
 		for (int i = 0; i < out.length; i++) {
 			System.out.print(out[i] + " ");
 		}
-		System.out.println();
-		out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.FIRST_2);
-		//System.out.println("QuickSort");
+		System.out.println("\nFirst 2 QuickSort");
+		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.FIRST_2);
 		for (int i = 0; i < out.length; i++) {
 			System.out.print(out[i] + " ");
 		}
-		System.out.println();
-		out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.LAST);
-		//System.out.println("QuickSort");
+		System.out.println("\nLast QuickSort");
+		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.LAST);
 		for (int i = 0; i < out.length; i++) {
 			System.out.print(out[i] + " ");
 		}
-		System.out.println();
-		out = new QuickSort<Integer>().quickSort(in.clone(),QuickSort.PIVOT.MIDDLE);
-		//System.out.println("QuickSort");
+		System.out.println("\nMiddle QuickSort");
+		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.MIDDLE);
+		for (int i = 0; i < out.length; i++) {
+			System.out.print(out[i] + " ");
+		}
+		System.out.println("\nMiddle 2 QuickSort");
+		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.MIDDLE_2);
+		for (int i = 0; i < out.length; i++) {
+			System.out.print(out[i] + " ");
+		}
+		System.out.println("\nMedian QuickSort");
+		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.MEDIAN);
+		for (int i = 0; i < out.length; i++) {
+			System.out.print(out[i] + " ");
+		}
+		System.out.println("\nRandom QuickSort");
+		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.RANDOM);
 		for (int i = 0; i < out.length; i++) {
 			System.out.print(out[i] + " ");
 		}
@@ -81,6 +93,14 @@ public class Sort {
 	
 	public static long getTime(long start) {
 		return System.currentTimeMillis() - start;
+	}
+	
+	public static Integer[] copy(Integer[] in) {
+		Integer out[] = new Integer[in.length];
+		for (int i = 0; i < in.length; i++) {
+			out[i] = in[i];
+		}
+		return out;
 	}
 	
 }
