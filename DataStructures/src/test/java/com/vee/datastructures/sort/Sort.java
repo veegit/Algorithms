@@ -1,13 +1,17 @@
 package com.vee.datastructures.sort;
 
+import java.io.InputStreamReader;
 import java.util.Random;
+import java.util.Scanner;
+
+import com.vee.datastructures.sort.QuickSort.PIVOT;
 
 public class Sort {
 	
 	public static void main(String args[]){
 		//Integer in[] = {10, 1, 200, 31, 24, 118, 122, 3, 151, 104};
 		//Integer in[] = getRandomArray();
-		{	Integer in[] = {5,3,4,2};
+		{	Integer in[] = {2,3,4};
 			testQuickSort(in);
 		}
 		{	Integer in[] = {10, 1, 200, 31, 24, 118, 122, 3, 151, 104};
@@ -19,45 +23,45 @@ public class Sort {
 		{	Integer in[] = {1,10,100,1000};
 			testQuickSort(in);
 		}
+		assignment();
 		//testHeapSort(in);
 		//testMergeSort(in);
 	}
 	
+	public static void assignment() {
+		  Scanner scanner;
+		  Integer[] in = new Integer[10000];
+		  int i = 0;
+		  QuickSort<Integer> q = new QuickSort<Integer>();
+		  try {
+		    scanner = new Scanner(new InputStreamReader(q.getClass().
+		    		getClassLoader().getResourceAsStream("QuickSort.txt")));
+		    while(scanner.hasNextInt())
+			   in[i++] = scanner.nextInt();
+		  } catch (Exception e) {
+			  e.printStackTrace();
+		  }
+		  for(PIVOT p : QuickSort.PIVOT.values()) {
+				System.out.println("\n"+p.toString() + " Sort");
+				Integer []out = new QuickSort<Integer>().quickSort(copy(in),p);
+				boolean flag = true;
+				for (i = 1; i < out.length; i++) {
+					flag = out[i-1] <= out[i]? true:false;
+					if(!flag) break;
+				}
+				System.out.println(flag + " " + i);
+				assert flag:flag;
+		  }
+	}
+	
 	public static void testQuickSort(Integer[] in) {
-		System.out.println("\nFirst QuickSort");
-		Integer []out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.FIRST);
-		for (int i = 0; i < out.length; i++) {
-			System.out.print(out[i] + " ");
-		}
-		System.out.println("\nFirst 2 QuickSort");
-		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.FIRST_2);
-		for (int i = 0; i < out.length; i++) {
-			System.out.print(out[i] + " ");
-		}
-		System.out.println("\nLast QuickSort");
-		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.LAST);
-		for (int i = 0; i < out.length; i++) {
-			System.out.print(out[i] + " ");
-		}
-		System.out.println("\nMiddle QuickSort");
-		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.MIDDLE);
-		for (int i = 0; i < out.length; i++) {
-			System.out.print(out[i] + " ");
-		}
-		System.out.println("\nMiddle 2 QuickSort");
-		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.MIDDLE_2);
-		for (int i = 0; i < out.length; i++) {
-			System.out.print(out[i] + " ");
-		}
-		System.out.println("\nMedian QuickSort");
-		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.MEDIAN);
-		for (int i = 0; i < out.length; i++) {
-			System.out.print(out[i] + " ");
-		}
-		System.out.println("\nRandom QuickSort");
-		out = new QuickSort<Integer>().quickSort(copy(in),QuickSort.PIVOT.RANDOM);
-		for (int i = 0; i < out.length; i++) {
-			System.out.print(out[i] + " ");
+		
+		for(PIVOT p : QuickSort.PIVOT.values()) {
+			System.out.println("\n"+p.toString() + " Sort");
+			Integer []out = new QuickSort<Integer>().quickSort(copy(in),p);
+			for (int i = 0; i < out.length; i++) {
+				System.out.print(out[i] + " ");
+			}
 		}
 		System.out.println();
 	}
