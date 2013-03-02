@@ -5,7 +5,7 @@ import com.vee.datastructures.LinkedListIterator;
 import com.vee.datastructures.sort.QuickSort;
 import com.vee.datastructures.util.Tuple;
 
-public class DFS {
+public class DFSExtra {
     private int adjMatrix[][];
     private int size;
     private int visited[];
@@ -29,7 +29,7 @@ public class DFS {
 		postvisit[v] = clock++;
 	}
 	
-    public DFS(int[][] adjMatrix,int size) {
+    public DFSExtra(int[][] adjMatrix,int size) {
     	  init(adjMatrix,size);
     	  for (int v=0; v<size; v++)
 		   if (visited[v] == 0)
@@ -121,7 +121,7 @@ public class DFS {
 		    {0,0,0,0,0,0,0,0,1,0}
 		   };
 		  int size = 10;
-		  DFS dfs = new DFS(X,size);
+		  DFSExtra dfs = new DFSExtra(X,size);
 		  int C[][] = dfs.getSpanningForest();
 		  int previsit[] = dfs.getPrevisit();
 		  int postvisit[] = dfs.getPostvisit();
@@ -161,7 +161,7 @@ public class DFS {
 		                System.out.print(newAdjMatrix[i][j] + " ");
 		        System.out.println();
 		  }
-		  System.out.println(new DFS(newAdjMatrix, size).hasCycles());
+		  System.out.println(new DFSExtra(newAdjMatrix, size).hasCycles());
 	}
 	
 	public int[][] getSpanningForest() {

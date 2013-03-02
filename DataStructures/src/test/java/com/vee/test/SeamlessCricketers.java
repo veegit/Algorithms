@@ -29,7 +29,7 @@ import java.util.Vector;
 
 import com.vee.datastructures.LinkedList;
 import com.vee.datastructures.LinkedListIterator;
-import com.vee.datastructures.graph.DFS;
+import com.vee.datastructures.graph.DFSExtra;
 import com.vee.datastructures.sort.QuickSort;
 import com.vee.datastructures.util.Tuple;
 
@@ -215,8 +215,8 @@ public class SeamlessCricketers {
 		    {0,0,0,0,0,0,0,1,0,0},
 		    {0,0,0,0,0,0,0,0,1,0}
 		   };
-    	int[][] updatedAdjMatrix = new DFS(adjMatrix, adjMatrix.length).removeCycles();
-    	DFS dfs = new DFS(updatedAdjMatrix, updatedAdjMatrix.length);
+    	int[][] updatedAdjMatrix = new DFSExtra(adjMatrix, adjMatrix.length).removeCycles();
+    	DFSExtra dfs = new DFSExtra(updatedAdjMatrix, updatedAdjMatrix.length);
     	int[] topSorted = dfs.topSort();
     	int size = topSorted.length;
     	Tuple<Integer,String>[] length = new Tuple[size];
