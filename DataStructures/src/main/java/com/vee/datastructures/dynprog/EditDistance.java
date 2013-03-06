@@ -3,13 +3,14 @@ package com.vee.datastructures.dynprog;
 public class EditDistance {
 	String source;
 	String dest;
+	String str = "";
 	int cnt = 1;
 	int[][] a;
 	
 	public EditDistance(String source, String dest) {
 		this.source = source;
 		this.dest = dest;
-		System.out.println(LCS(source.length()-1,dest.length()-1));
+		//System.out.println(LCS(source.length()-1,dest.length()-1));
 		a = new int[source.length()+1][dest.length()+1];
 		LCS_it();
 	}
@@ -37,16 +38,23 @@ public class EditDistance {
 		}
 		for (int i = 0; i < source.length(); i++)
 			for (int j=0; j < dest.length(); j++) {
-				System.out.println(cnt++);
+			System.out.println(cnt++);
 			if(source.charAt(i) == dest.charAt(j)) 
-				a[i+1][j+1] = a[i][j] + 1;
+				a[i+1][j+1] = a[i][j] + 1; 
 			else 
 				a[i+1][j+1] = Math.max(a[i+1][j], a[i][j+1]);
-			}
+		}
 		System.out.println(a[source.length()][dest.length()]);
+		
+		/* Print array */
+		for (int i = 0; i <= source.length(); i++) {
+			for (int j=0; j <= dest.length(); j++)
+				System.out.print(a[i][j]+" ");
+			System.out.println();
+		}
 	}
 	
 	public static void main(String args[]) {
-		new EditDistance("grapple", "apple");
+		new EditDistance("rappler", "maappse");
 	}
 }
