@@ -1,54 +1,86 @@
-package com.vee.datastructures.graph;
+package com.vee.test;
+
+
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 import com.vee.datastructures.LinkedList;
 import com.vee.datastructures.LinkedListIterator;
-import com.vee.datastructures.tree.BST;
 import com.vee.datastructures.util.Tuple;
 
-public class ShortestPath {
+public class PA5 {
 
-	private final static int INFINITY = Integer.MAX_VALUE;
+	private final static int INFINITY = 1000000;
 	
 	int [][]adjMatrix;
 	LinkedList<Tuple<Integer,Integer>>[] adjList;
 	int size;
-	int src = 2;
+	int src = 0;
 	public int []shortesPathDistance;
 	public int []shortesPathVertices;
 	
-	public ShortestPath(int[][] X, int size) {
-		init(X,size);
+	public PA5(int size) {
+		init(size);
 	}
 	
-	private void init(int[][] X, int size){
-		adjMatrix = X;
+	private void init(int size){
 		this.size = size;
 		shortesPathDistance = new int[size];
 		shortesPathVertices = new int[size];
-		//toAdjList();
+		initList();
 	}
 	
-	@SuppressWarnings("unchecked")
-	private void toAdjList() {
-		adjList = new LinkedList[size];
-		for(int i=0; i< adjMatrix.length; i++) {
-			adjList[i] = new LinkedList<Tuple<Integer,Integer>>();
-			for(int j=0; j< adjMatrix.length; j++)
-				if(adjMatrix[i][j] != 0)
-					adjList[i].insert(new Tuple<Integer,Integer>(j,adjMatrix[i][j]));
+	private void initList(){
+		Scanner scanner;
+		  int i = 0;
+		  try {
+		    scanner = new Scanner(new InputStreamReader(getClass().
+		    		getClassLoader().getResourceAsStream("dijkstraData.txt")));
+		    adjList = new LinkedList[size];
+		    while(scanner.hasNextLine()) {
+			   String text = scanner.nextLine();
+			   String splits[] = text.split("\\t");
+			   LinkedList<Tuple<Integer,Integer>> list = 
+				   new LinkedList<Tuple<Integer,Integer>>();
+			   for (int j = 1; j < splits.length; j++) {
+				   String[] cell = splits[j].split(",");
+				   list.insert(new Tuple<Integer,Integer>
+				   				(Integer.parseInt(cell[0])-1,
+				   						Integer.parseInt(cell[1])));
+			   }
+			   adjList[i++] = list;
+		    }
+		  } catch (Exception e) {
+			  e.printStackTrace();
+		  }
+		toAdjMat();
+	}
+	
+	private void toAdjMat() {
+		adjMatrix = new int[size][size];
+		for (int i = 0 ; i < adjList.length; i++) {
+			LinkedList<Tuple<Integer,Integer>> list = adjList[i];
+			for (LinkedListIterator<Tuple<Integer, Integer>> iterator = 
+							list.iterator(); iterator.hasNext();) {
+				Tuple<Integer, Integer> t = iterator.getNext();
+				adjMatrix[i][t.head] = t.tail;
+			}
 		}
 	}
 	
 	public void djikstrasShortesPath(){
-		/* Should use a hashmap instead */
-		BST<Integer> nodes = new BST<Integer>();
+		/* Should use a hashmap, BST has a bug which removes them instead */
+		//BST<Integer> nodes = new BST<Integer>();
+		Map<Integer,Integer> nodes = new HashMap<Integer,Integer>();
 		
 		/* IMP ARRAY visited */
 		int []visited = new int[size];
 		for (int i = 0; i < shortesPathDistance.length; i++) {
 			shortesPathDistance[i] = INFINITY;
 			visited[i] = 0;
-			nodes.insert(i);
+			nodes.put(i,i);
 		}
 		
 		shortesPathDistance[src] = 0;
@@ -60,13 +92,13 @@ public class ShortestPath {
 			if(shortesPathDistance[vertex] == INFINITY)
 				break;
 			
-			nodes.delete(vertex);
+			nodes.remove(vertex);
 			visited[vertex] = 1;
 			
 			for(int j=0;j<size;j++){
 				int weight;
 				if((weight = adjMatrix[vertex][j]) > 0) {
-					if(nodes.find(j) == null)
+					if(!nodes.containsKey(j))
 						continue;
 					/*
 					 *   SRC
@@ -101,27 +133,6 @@ public class ShortestPath {
 		return index;
 	}
 	
-	public void bellmanFordShortestPath() {
-		int v = size-1;
-		for (int i = 0; i < shortesPathDistance.length; i++) 
-			shortesPathDistance[i] = INFINITY;
-		shortesPathDistance[src] = 0;
-		
-		while(v-- > 0 )
-			for(int vertex=0;vertex< size; vertex++) {
-				LinkedListIterator<Tuple<Integer,Integer>> it = adjList[vertex].iterator();
-				while(it.hasNext()) {
-					Tuple<Integer,Integer> node = it.getNext(); 
-					int j = node.head;
-					int weight = node.tail;
-					if(shortesPathDistance[j] > add(shortesPathDistance[vertex], weight)) {
-						shortesPathDistance[j] = shortesPathDistance[vertex] + weight;
-						shortesPathVertices[j] = vertex;
-					}
-				}
-			}
-	}
-	
 	/** 
 	 * 
 	 * To avoid Integer overflow return {INFINITY + something} as INFINITY
@@ -134,37 +145,20 @@ public class ShortestPath {
 	}
 	
 	public static void main(String args[]){
-		int Y[][] =
-		   {
-		    {0,1,0,1,0,0,0,0,0,0},
-		    {0,0,1,0,0,1,0,0,0,0},
-		    {1,0,0,1,1,0,0,0,0,0},
-		    {0,0,0,0,-1,0,0,0,0,0},
-		    {0,0,0,0,0,0,0,0,0,0},
-		    {0,0,1,0,0,0,0,0,0,0},
-		    {0,0,0,0,0,1,0,1,0,0},
-		    {0,0,0,0,0,1,0,0,0,1},
-		    {0,0,0,0,0,0,0,1,0,0},
-		    {0,0,0,0,0,0,0,0,1,0}
-		   };
-		{
-		  int X[][] = 
-		  {
-		    {0,2,1,0},
-		    {2,0,5,1},
-		    {1,5,0,5},
-		    {0,1,5,0}
-		   };
-		  int size = X.length;
-		  ShortestPath sp = new ShortestPath(X, size);
-		  //sp.bellmanFordShortestPath();
-		  //for (int i = 0; i < sp.shortesPathDistance.length; i++)
-		//	 System.out.print(sp.shortesPathDistance[i] + "  ");
+		  PA5 sp = new PA5(200);
 		  sp.djikstrasShortesPath();
 		  System.out.println();
 		  for (int i = 0; i < sp.shortesPathDistance.length; i++)
-			 System.out.print(sp.shortesPathDistance[i] + "  ");
+			  if(exists(i))
+				 System.out.print(sp.shortesPathDistance[i]+",");		  
 	}
-
-}
+	
+	private static boolean exists(int num){
+		int array[] = {1,2,3,4,5,6};
+		for (int j = 0; j < array.length; j++) {
+			if(array[j]-1==num)
+				return true;
+		}
+		return false;
+	}
 }
