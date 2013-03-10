@@ -1,13 +1,12 @@
 package com.vee.datastructures.graph;
 
 import java.io.InputStreamReader;
-import java.util.Iterator;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.vee.datastructures.LinkedList;
 import com.vee.datastructures.LinkedListIterator;
-import com.vee.datastructures.divnconq.Inversions;
-import com.vee.datastructures.tree.BST;
 import com.vee.datastructures.util.Tuple;
 
 public class ShortestPath {
@@ -29,19 +28,10 @@ public class ShortestPath {
 		this.size = size;
 		shortesPathDistance = new int[size];
 		shortesPathVertices = new int[size];
-		//initMat();
 		initList();
 	}
 	
 	private void initMat(){
-		 int X[][] = 
-		  {
-		    {0,2,1,0},
-		    {0,0,5,1},
-		    {0,0,0,5},
-		    {0,0,0,0}
-		   };
-		adjMatrix = X;
 		toAdjList();
 	}
 	
@@ -96,15 +86,16 @@ public class ShortestPath {
 	}
 	
 	public void djikstrasShortesPath(){
-		/* Should use a hashmap instead */
-		BST<Integer> nodes = new BST<Integer>();
+		/* Should use a hashmap, BST has a bug which removes them instead */
+		//BST<Integer> nodes = new BST<Integer>();
+		Map<Integer,Integer> nodes = new HashMap<Integer,Integer>();
 		
 		/* IMP ARRAY visited */
 		int []visited = new int[size];
 		for (int i = 0; i < shortesPathDistance.length; i++) {
 			shortesPathDistance[i] = INFINITY;
 			visited[i] = 0;
-			nodes.insert(i);
+			nodes.put(i,i);
 		}
 		
 		shortesPathDistance[src] = 0;
@@ -116,13 +107,13 @@ public class ShortestPath {
 			if(shortesPathDistance[vertex] == INFINITY)
 				break;
 			
-			nodes.delete(vertex);
+			nodes.remove(vertex);
 			visited[vertex] = 1;
 			
 			for(int j=0;j<size;j++){
 				int weight;
 				if((weight = adjMatrix[vertex][j]) > 0) {
-					if(nodes.find(j) == null)
+					if(!nodes.containsKey(j))
 						continue;
 					/*
 					 *   SRC
@@ -190,45 +181,18 @@ public class ShortestPath {
 	}
 	
 	public static void main(String args[]){
-		int Y[][] =
-		   {
-		    {0,1,0,1,0,0,0,0,0,0},
-		    {0,0,1,0,0,1,0,0,0,0},
-		    {1,0,0,1,1,0,0,0,0,0},
-		    {0,0,0,0,-1,0,0,0,0,0},
-		    {0,0,0,0,0,0,0,0,0,0},
-		    {0,0,1,0,0,0,0,0,0,0},
-		    {0,0,0,0,0,1,0,1,0,0},
-		    {0,0,0,0,0,1,0,0,0,1},
-		    {0,0,0,0,0,0,0,1,0,0},
-		    {0,0,0,0,0,0,0,0,1,0}
-		   };
-		{
-		  int X[][] = 
-		  {
-		    {0,2,1,0},
-		    {0,0,5,1},
-		    {0,0,0,5},
-		    {0,0,0,0}
-		   };
-		  int size = X.length;
-		  ShortestPath sp = new ShortestPath(4);
-		  //sp.bellmanFordShortestPath();
-		  //for (int i = 0; i < sp.shortesPathDistance.length; i++)
-		//	 System.out.print(sp.shortesPathDistance[i] + "  ");
+		  ShortestPath sp = new ShortestPath(200);
 		  sp.djikstrasShortesPath();
 		  System.out.println();
-		  //for (int i = 0; i < sp.shortesPathDistance.length; i++)
-		//	 System.out.println((i+1)+"->"+sp.shortesPathDistance[i]);
 		  for (int i = 0; i < sp.shortesPathDistance.length; i++)
 			  if(exists(i))
-				 System.out.println((i+1)+"->"+sp.shortesPathDistance[i]);		  
+				 System.out.print(sp.shortesPathDistance[i]+",");		  
 	}
 		
 }
 	private static boolean exists(int num){
-		//int array[] = {7,37,59,82,99,115,133,165,188,197};
-		int array[] = {2,4};
+		int array[] = {7,37,59,82,99,115,133,165,188,197};
+		//int array[] = {1,2,3,4,5,6};
 		for (int j = 0; j < array.length; j++) {
 			if(array[j]-1==num)
 				return true;
