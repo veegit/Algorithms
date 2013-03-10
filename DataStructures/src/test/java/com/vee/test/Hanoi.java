@@ -63,9 +63,17 @@ public class Hanoi {
 	/**
 	 * @param args
 	 */
+	void move(String s, String d, String aux, int n){
+		if(n==1)
+			System.out.println(s+"->"+d);
+		else {
+			move(s,aux,d,n-1);
+			System.out.println(s+"->"+d);
+			move(aux,d,s,n-1);
+		}		
+	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		new Hanoi().move("A", "B", "C", 3);
 	}
 
 }
