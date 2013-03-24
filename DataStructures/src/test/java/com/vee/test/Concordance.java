@@ -84,10 +84,10 @@ public class Concordance {
 	 * sorting will not be required during display but HashMap would require
 	 * sorting of keys once before display. TreeMap vs HashMap difference will 
 	 * not matter for small text or small files. On investigation this proved
-	 * true as "Complete works of Shakespeare" yielded following results
+	 * true as "Complete works of Shakespeare" yielded a slightly better performance
 	 * Size = 5.4 MB
-	 * TreeMap = 3.15 Seconds
-	 * HashMap = 2.65 Seconds
+	 * TreeMap = 1m 29 Seconds
+	 * HashMap = 1m 26 Seconds
 	 *  
 	 */
 	Map<String,Tuple> concordance = new HashMap<String,Tuple>();
@@ -112,9 +112,9 @@ public class Concordance {
 	}
 	
 	public static void usage() {
-		System.out.println("Usage: java concordance " +
+		System.out.println("Usage: java Concordance " +
 				"\"your text in double quotes\"");
-		System.out.println("Usage: java concordance -f " +
+		System.out.println("Usage: java Concordance -f " +
 				"/path/to/filename");
 	}
 	
@@ -197,7 +197,7 @@ public class Concordance {
 			 * forward the iterator
 			 * Also check for last character if its a word boundary or not
 			 * If this check is not made then the following text "ok" would 
-			 * give a statement# of 2 instead of 1 since there is not sentence
+			 * give a statement# of 2 instead of 1 since there is no sentence
 			 * boundary present 
 			 */
 			
