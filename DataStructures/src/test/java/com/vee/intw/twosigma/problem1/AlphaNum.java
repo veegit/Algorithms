@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.intw.twosigma.problem1;
 
 public abstract class AlphaNum {
 	protected int position;

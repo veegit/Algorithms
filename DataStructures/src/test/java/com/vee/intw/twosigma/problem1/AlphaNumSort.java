@@ -1,7 +1,8 @@
-package com.vee.test;
+package com.vee.intw.twosigma.problem1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 /**
  * 

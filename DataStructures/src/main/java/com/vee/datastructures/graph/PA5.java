@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.graph;
 
 
 import java.io.InputStreamReader;
@@ -145,7 +145,7 @@ public class PA5 {
 	}
 	
 	public static void main(String args[]){
-		  PA5 sp = new PA5(200);
+		  PA5 sp = new PA5(4);
 		  sp.djikstrasShortesPath();
 		  System.out.println();
 		  for (int i = 0; i < sp.shortesPathDistance.length; i++)
@@ -154,7 +154,7 @@ public class PA5 {
 	}
 	
 	private static boolean exists(int num){
-		int array[] = {1,2,3,4,5,6};
+		int array[] = {1,2,3,4};
 		for (int j = 0; j < array.length; j++) {
 			if(array[j]-1==num)
 				return true;

@@ -1,4 +1,5 @@
-package com.vee.test;
+package com.vee.intw.twosigma.problem1;
+
 
 public class Num extends AlphaNum{
 	private int value;

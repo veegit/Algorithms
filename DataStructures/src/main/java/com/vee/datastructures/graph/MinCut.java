@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.graph;
 
 import java.io.InputStreamReader;
 import java.util.ArrayList;
