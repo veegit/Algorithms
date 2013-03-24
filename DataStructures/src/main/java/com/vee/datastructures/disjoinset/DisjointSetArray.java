@@ -42,7 +42,7 @@ public class DisjointSetArray {
 	}
 	
 	public static void main(String args[]) {
-		new DisjointSetArray().readFile("largeDisjointSet.txt");
+		new DisjointSetArray().readFile("tinyDisjointSet.txt");
 	}
 	
 	public void readFile(String file) {

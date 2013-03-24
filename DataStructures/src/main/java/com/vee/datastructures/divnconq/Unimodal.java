@@ -12,8 +12,10 @@ package com.vee.datastructures.divnconq;
 public class Unimodal {
 
 	public static void main(String[] args) {
-		int a[] = {1,2,8,7,6,5};
-		System.out.println(maximum(a));
+		//int a[] = {1,2,8,7,6,5};
+		int a[] = {3,4,5,6,7,1,2};
+		//System.out.println(maximum(a));
+		System.out.println(find(a,2));
 	}
 	
 	static int maximum(int a[]) {
@@ -33,6 +35,24 @@ public class Unimodal {
 				break;
 		}
 		return a[mid];
+	}
+	
+	static int find(int a[],int num) {
+		int low=0,high=a.length-1;
+		int mid = low+(high-low)/2;
+		boolean found = false;
+		while(true) {
+			/*if(a[mid] == num) {
+				found = true;break;
+			}*/
+			if(a[mid-1] < a [mid] && a[mid] < a[mid+1])
+				mid = low +1;
+			else if(a[mid-1] > a [mid] && a[mid] > a[mid+1])
+				mid = high -1;
+			else
+				break;
+		}
+		return Math.min(Math.min(a[mid-1], a[mid]),a[mid+1]);
 	}
 	
 	static void wrong1() {
