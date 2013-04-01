@@ -1,4 +1,4 @@
-package com.vee.intw.twosigma.problem1;
+package com.vee.intw.twosigma;
 
 public abstract class BaseSort {
 
