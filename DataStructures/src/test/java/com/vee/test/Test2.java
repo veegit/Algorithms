@@ -112,6 +112,6 @@ public class Test2 {
 	}
 	
 	public int pow(int a, int b) {
-		
+		return 0;
 	}
 }
