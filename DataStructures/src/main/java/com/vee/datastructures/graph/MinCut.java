@@ -29,6 +29,7 @@ import java.util.Scanner;
  * the space provided. So e.g., if your answer is 5, just type 5 in the space
  * provided.
  * 
+ * Answer 17
  * @author Narayanan
  * 
  */

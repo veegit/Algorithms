@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.intw.google;
 /**
  * Imagine a building where there are no such floor numbers which have 4 in any
  * of their digits. Find the floor number you would find in such a building 
