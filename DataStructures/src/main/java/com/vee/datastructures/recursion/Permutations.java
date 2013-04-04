@@ -16,15 +16,16 @@ public class Permutations {
 	/**
 	 * 
 	 * The idea is to fix each letter and get the permutation of the rest
-	 * a string of 0 length will return itself OR in this case prefix+""
+	 * A string of 0 length will return itself OR in this case fixed+""
 	 */
-	private void Permutation(String prefix, String str) {
+	private void Permutation(String fixed, String str) {
 		int n = str.length();
 		if(n == 0) 
-			ofPermutations.add(prefix);
+			ofPermutations.add(fixed);
 		else {
 			for(int i =0;i<n;i++)
-				Permutation(prefix+str.charAt(i),str.substring(0, i)+str.substring(i+1));
+				Permutation(fixed+str.charAt(i),
+						str.substring(0, i) + str.substring(i+1));
 		}
 	}
 	

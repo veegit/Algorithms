@@ -18,7 +18,7 @@ public class MergeSort<M> implements Comparator<M> {
 	  }
 
 	  private void sort(int low, int high) {
-		System.out.println("SORT: Low = " + low + " High = " + high);
+		System.out.println("\nSORT: Low = " + low + " High = " + high);
 	    // Check if low is smaller then high, if not then the array is sorted
 	    if (low < high) {
 	      // Get the index of the element which is in the middle
@@ -33,7 +33,7 @@ public class MergeSort<M> implements Comparator<M> {
 	  }
 
 	  private void merge(int low, int middle, int high) {
-		  System.out.println("MERGE: Low = " + low + " High = " + high);
+		  System.out.println("\nMERGE: Low = " + low + " High = " + high);
 	    // Copy both parts into the helper array
 	    for (int i = low; i <= high; i++) {
 	      helper[i] = numbers[i];
@@ -65,7 +65,7 @@ public class MergeSort<M> implements Comparator<M> {
 	      count++;
 	    }
 	    System.out.println("COUNT: " + count);
-	    for (int k2 = low; k2 <= high; k2++)
+	    for (int k2 = 0; k2 < numbers.length; k2++)
 			System.out.print(numbers[k2] + " ");
 
 	  }
