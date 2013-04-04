@@ -14,7 +14,7 @@ import java.util.Set;
  * 
  * @author Narayanan
 Problem Statement #2:
-(Version: TwoSigmaCodeTestCopyFile 293:32e332c64eac)
+(Version: CodeTestCopyFile 293:32e332c64eac)
 Oh no! Disaster has struck some of ACME's redundant data centers. The
 administrators have managed to restore backups, but some data sets are
 still missing from some data centers. Fortunately, every data set can be
@@ -117,100 +117,9 @@ done
 public class SyncDC {
 	
 	public static void main(String[] args) {
-		new SyncDC().init();
-	}
-
-	public void init() {
-		Scanner scan = new Scanner(System.in);
-		int count = Integer.parseInt(scan.nextLine());
-		int i = 0;
-		datacenter[] dcs = new datacenter[count];
-		Set<Integer> power = new HashSet<Integer>();
-		Map<Integer,List<datacenter>> map = 
-			new HashMap<Integer, List<datacenter>>();
-		
-		while(i<count) {
-			String text = scan.nextLine();
-			String splits[] = text.split("\\s");
-			System.out.println(text);
-			datacenter dc = new datacenter(); 
-			for (int j = 0; j < splits.length; j++) {
-				Integer data = Integer.parseInt(splits[j]);
-				dc.add(i,data);
-			}
-			dcs[i] = dc;
-			power.addAll(dc.data);
-			i++;
-		}
-		
-		for (Iterator<Integer> iterator = power.iterator(); iterator.hasNext();) {
-			int integer = iterator.next();
-			datacenter dc = null;
-			for(i =0; i<dcs.length;i++) {
-				if(dcs[i].contains(integer)) {
-					dc = dcs[i];
-				} else
-					dcs[i].missing(integer);
-			}
-			List<datacenter> list = map.get(integer);
-			if(list == null) {
-				list = new ArrayList<datacenter>();
-			}
-			list.add(dc);
-			Set<Entry<Integer, List<datacenter>>> set = map.entrySet();
-		}
-		
-		for(i = 0;i< dcs.length;i++){
-			for (Iterator<Integer> iterator = dcs[i].missing.iterator(); iterator.hasNext();){
-				int item = iterator.next();
-				System.out.print(dcs[i].id+ " " + item);
-			}
-			System.out.println();
-		}
-		
-		for(i = 0;i< dcs.length;i++){
-			for (Iterator<Integer> iterator = dcs[i].missing.iterator(); iterator.hasNext();){
-				int item = iterator.next();
-				datacenter dc = map.get(item).get(0);
-				System.out.println(item + " " + dc.id + " " + dcs[i].id);
-			}
-		}
-
-	}
-	
-	class datacenter {
-		int id;
-		Set<Integer> data = new HashSet<Integer>();
-		Set<Integer> missing = new HashSet<Integer>();
-		
-		void add(int i,int data){
-			id=i+1;
-			this.data.add(data);
-		}
-		
-		boolean contains(int data){
-			return this.data.contains(data);
-		}
-		
-		void missing(int data){
-			this.missing.add(data);
-		}
-	}
-	
-	class dataset {
-		int item;
-		int occurrence;
-		
-		dataset(int item,int occurrence){
-			this.item = item;
-			this.occurrence = occurrence;
-		}
-		
-		public boolean equals(Object o) {
-			return 
-			(item == ((dataset)o).item && 
-					occurrence == ((dataset)o).occurrence);
-		}
+		/* TODO
+		 * Copy the code from the file you submitted
+		 */
 	}
 
 }

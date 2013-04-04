@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 
  * @author Narayanan
  * Problem Statement # 1:
-(Version: TwoSigmaCodeTestJumbleSort $Revision: 1.9 $)
+(Version: JumbleSort $Revision: 1.9 $)
 You are to write a program that takes a list of strings containing integers
 and words and returns a sorted version of the list.
 
