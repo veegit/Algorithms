@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 import com.vee.datastructures.sort.QuickSort.PIVOT;
 
-public class Sort {
+public class TestSort {
 	
 	public static void main(String args[]){
 		//Integer in[] = {10, 1, 200, 31, 24, 118, 122, 3, 151, 104};

@@ -45,7 +45,7 @@ public class KSorted {
 		}
 		return Math.round(cnt);
 	}
-	
+	/* O(nlogk) solution */
 	static double heap(int a[],int k) {
 		PriorityQueue<Integer> heap  = new PriorityQueue<Integer>();
 		int j =0;
