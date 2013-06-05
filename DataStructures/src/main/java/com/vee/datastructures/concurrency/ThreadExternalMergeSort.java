@@ -1,4 +1,4 @@
-package com.vee.datastructures.sort;
+package com.vee.datastructures.concurrency;
 
 import java.io.File;
 import java.io.PrintWriter;
