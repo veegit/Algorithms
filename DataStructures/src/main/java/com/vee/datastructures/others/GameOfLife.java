@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.others;
 
 import java.util.Hashtable;
 import java.util.Iterator;

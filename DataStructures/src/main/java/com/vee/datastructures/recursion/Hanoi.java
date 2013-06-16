@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.recursion;
 
 /**
  * There are K pegs. Each peg can hold discs in decreasing order of radius when

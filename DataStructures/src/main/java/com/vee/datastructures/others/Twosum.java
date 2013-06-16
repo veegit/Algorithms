@@ -1,4 +1,4 @@
-package com.vee.test;
+package com.vee.datastructures.others;
 
 import java.io.File;
 import java.io.FileNotFoundException;

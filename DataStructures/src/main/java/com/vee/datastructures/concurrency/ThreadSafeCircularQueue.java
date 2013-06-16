@@ -1,4 +1,7 @@
 package com.vee.datastructures.concurrency;
+
+import com.vee.datastructures.CircularQueue;
+
 public class ThreadSafeCircularQueue {
   private final Object lock = new Object();
   private final CircularQueue queue;
