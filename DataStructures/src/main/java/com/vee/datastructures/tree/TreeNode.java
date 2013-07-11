@@ -31,4 +31,9 @@ public class TreeNode<M extends Object> extends Node<M> {
 		this.setData(data);
 	}
 	
+	public TreeNode(TreeNode<M> node) {
+		super();
+		this.setData(node.getData());
+	}
+	
 }

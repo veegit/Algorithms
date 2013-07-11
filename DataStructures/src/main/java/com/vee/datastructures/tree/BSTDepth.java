@@ -8,5 +8,6 @@ package com.vee.datastructures.tree;
 public class BSTDepth {
 /*
  * TODO
+ * Retrieve the depth of the BT
  */
 }
