@@ -1,6 +1,9 @@
 package com.vee.intw.twosigma;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
 import java.util.Scanner;
 
 
@@ -35,7 +38,7 @@ Constraints:
 The code you submit must take input from stdin and produce output to stdout
 as specified above. No other output is permitted. You can assume the input
 will be valid. Feel free to use standard libraries to assist in sorting.
- 
+
 In the examples below, the text "Input:" and "Output:" are not part of the
 output, and neither are the blank lines.
 
@@ -82,15 +85,16 @@ public class AlphaNumSort extends BaseSort {
 		ArrayList<Num> num = new ArrayList<Num>();
 		int i =0;
 		for (i = 0; i < splits.length; i++) {
-			if (splits[i].matches("[0-9]+") && text.length() > 2) 
+			if (splits[i].matches("[0-9]+") && text.length() > 2) {
 				num.add(new Num(Integer.parseInt(splits[i]),i));
-			else
+			} else {
 				alpha.add(new Alpha(splits[i],i));
+			}
 		}
 		new AlphaNumSort(i,alpha.toArray(new Alpha[0]),num.toArray(new Num[0]));
-		
+
 	}
-	
+
 	public AlphaNumSort(int count, Alpha[] alpha, Num[] num) {
 		String[] alphanums = new String[count];
 		Alpha[] aarray = alpha;
@@ -101,24 +105,25 @@ public class AlphaNumSort extends BaseSort {
 		runQuickSort_First(narray, 0,size - 1);
 		for (int i = 0; i < aarray.length; i++) {
 			alphanums[aarray[i].getPosition()] =
-				aarray[i].getValue(); 
+					aarray[i].getValue();
 		}
 		for (int i = 0; i < narray.length; i++) {
-			alphanums[narray[i].getPosition()] = narray[i].getValue()+""; 
+			alphanums[narray[i].getPosition()] = narray[i].getValue()+"";
 		}
 		for (int i = 0; i < alphanums.length; i++) {
 			System.out.print(alphanums[i] + " ");
 		}
 	}
-	
+
 	void runQuickSort_First(AlphaNum[] array, int low, int high){
-		if(low >= high)
+		if(low >= high) {
 			return;
+		}
 		int index = partition(array, low,high);
 		runQuickSort_First(array, low,index-1);
 		runQuickSort_First(array, index+1,high);
 	}
-	
+
 	int partition(AlphaNum[] array, int low,int high) {
 		int i = low+1, j = low+1;
 		AlphaNum pivot = array[low];
@@ -127,17 +132,50 @@ public class AlphaNumSort extends BaseSort {
 				exchange(array,i,j);
 				j++;
 			}
-			i++;	
+			i++;
 		}
 		exchange(array,low,j-1);// exchange rightmost element less than p
 		return j-1;
 	}
-	
+
 	public int compare(AlphaNum o1, AlphaNum o2) {
-		if(o1 instanceof Alpha)
+		if(o1 instanceof Alpha) {
 			return ((Alpha) o1).getValue().compareTo(((Alpha) o2).getValue());
-		else
+		} else {
 			return ((Num) o1).getValue()- ((Num) o2).getValue();
+		}
+	}
+
+	public void alphaNumSort(String s) {
+		String a[] = s.split("\\W+");
+		ArrayList<String> alpha = new ArrayList<String>();
+		ArrayList<Integer> num = new ArrayList<Integer>();
+		boolean isAlpha[] = new boolean[a.length];
+		for (int i = 0; i<a.length; i++) {
+			try {
+				Integer in = Integer.parseInt(a[i]);
+				num.add(in);
+				isAlpha[i] = false;
+			} catch (NumberFormatException e) {
+				alpha.add(a[i]);
+				isAlpha[i] = true;
+			}
+		}
+		Collections.sort(alpha, new Comparator<String>() {
+			public int compare(String o1, String o2) {
+				return o1.compareToIgnoreCase(o2);
+			}
+		});
+		Collections.sort(num);
+		Iterator<String> ia = alpha.iterator();
+		Iterator<Integer> in = num.iterator();
+		for (boolean b : isAlpha) {
+			if (b) {
+				System.out.println(ia.next());
+			} else {
+				System.out.println(in.next());
+			}
+		}
 	}
 
 }
