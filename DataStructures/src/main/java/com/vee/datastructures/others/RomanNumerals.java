@@ -1,5 +1,8 @@
 package com.vee.datastructures.others;
 
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
 public class RomanNumerals {
 
 	public enum ROMAN {
@@ -24,20 +27,28 @@ public class RomanNumerals {
 		}
 	}
 	
-	public static void main(String[] args) {
-		
+	public String toRoman(int n) {
+		String roman = "";
 		ROMAN[] array = ROMAN.values();
-		int n = 1404;
 		while(n >0)
 			for(int i = array.length-1; i>=0; i--) {
 				ROMAN r = array[i];
 				int q = n/r.value;
 				if(q > 0) {
 					n = n - r.value;
-					System.out.println(r.name());
+					roman+= r.name();
 					break;
 				}
 			}
+		return roman;
+	}
+	
+	@Test
+	public void testValid() {
+		assertEquals("X", toRoman(10) );
+		assertEquals("VIII", toRoman(8) );
+		assertEquals("MCMLIV", toRoman(1954));
+		assertEquals("DCCCIX", toRoman(809));
 	}
 
 }

@@ -11,10 +11,10 @@ public class SpiralMatrix {
 	
 	static void spiral(int[][] a, int row_st, int row_end, int col_st, int col_end)  {
 		if(row_st == row_end) 
-			for (int i = col_st; i < col_end; i++)
+			for (int i = col_st; i <= col_end; i++)
 				System.out.print(a[row_st][i] + " ");
 		else if(col_st == col_end) {
-			for (int i = row_st; i < row_end; i++)
+			for (int i = row_st; i <= row_end; i++)
 				System.out.print(a[i][col_end] + " ");
 		}
 		else {

@@ -3,13 +3,14 @@ package com.vee.datastructures.recursion;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Permutations {
 	
 	public Set<String> ofPermutations;
 	
 	public Permutations(String str) {
-		ofPermutations = new HashSet<String>();
+		ofPermutations = new TreeSet<String>();
 		Permutation("",str);
 	}
 	
@@ -30,9 +31,11 @@ public class Permutations {
 	}
 	
 	public static void main(String args[]) {
-		Permutations p = new Permutations("aaba");
+		Permutations p = new Permutations("1234");
 		for (Iterator<String> iterator = p.ofPermutations.iterator(); iterator.hasNext();) {
 			System.out.println(iterator.next());
 		}
 	}
+
+
 }
