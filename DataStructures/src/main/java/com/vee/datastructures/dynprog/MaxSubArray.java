@@ -14,7 +14,7 @@ public class MaxSubArray {
 	 * the contiguous subarray with the largest sum is
 	 * 4, −1, 2, 1, with sum 6.
 	 */
-	static int maxSum(int a[]) {
+	static int kadaneMaxSum(int a[]) {
 		int maxending = a[0], maxsofar = a[0];
 		for(int i = 1; i < a.length; i++) {
 			if(maxending < 0) {
@@ -29,10 +29,9 @@ public class MaxSubArray {
 		return maxsofar;
 	}
 
-	static int maxSumZero(int a[]) {
+	static int kadaneMaxSumZero(int a[]) {
 		int sum = a[0], max = a[0];
 		for(int i = 1; i < a.length; i++) {
-			//maxending = Math.max(Math.max(a[i],0), maxending+a[i]);
 			sum = Math.max(sum+a[i], a[i]);
 			max = Math.max(sum, max);
 		}
@@ -42,12 +41,12 @@ public class MaxSubArray {
 	public static void main(String[] args) {
 		int a[] = new int[]{-2,-3,-3,-4,-2,-2,-1,-5,-4};
 		a = new int[] {-2,1,-3,4,-1,2,1,-5,-4};
-		System.out.println(maxSum(a));
-		System.out.println(maxSumZero(a));
+		System.out.println(kadaneMaxSum(a));
+		System.out.println(kadaneMaxSumZero(a));
 		maxProd(a);
 	}
 
-	static int maxSum1(int a[]) {
+	static int maxSum(int a[]) {
 		int sum = a[0], max = a[0];
 		for (int i=1; i< a.length; i++) {
 			if (sum + a[i] >= a[i]) {
@@ -55,7 +54,6 @@ public class MaxSubArray {
 			} else {
 				sum = a[i];
 			}
-			//sum = Math.max(sum + a[i], a[i]);
 			max = Math.max(max, sum);
 		}
 		return max;
@@ -64,11 +62,11 @@ public class MaxSubArray {
 	static int maxProd(int a[]) {
 		int prod = a[0], max = a[0], min = a[0];
 		for (int i=1; i< a.length; i++) {
-			int temp = Math.min(min * a[i], a[i]);
-			temp = Math.min(max * a[i], temp);
+			int newmin = Math.min(min * a[i], a[i]);
+			newmin = Math.min(max * a[i], newmin);
 			max = Math.max(max * a[i], a[i]);
 			max = Math.max(min * a[i], max);
-			min = temp;
+			min = newmin;
 			prod = Math.max(prod, max);
 			System.out.println(String.format("Max: %d, Min: %d, Prod: %d", max, min, prod));
 		}
@@ -83,6 +81,16 @@ public class MaxSubArray {
 		assertEquals(maxProd(a), 480);
 		a = new int[] {2,-1,3, -4, 1,-2,1,-5,4,-1};
 		assertEquals(maxProd(a), 960);
+
+	}
+	@Test
+	public void testMaxSum() {
+		int[] a = new int[] {-2,1,-3,4};
+		assertEquals(maxSum(a), 4);
+		a = new int[] {-2,1,3,-4};
+		assertEquals(maxSum(a), 4);
+		a = new int[] {-2,-1,-3, -4};
+		assertEquals(maxSum(a), -1);
 
 	}
 }
