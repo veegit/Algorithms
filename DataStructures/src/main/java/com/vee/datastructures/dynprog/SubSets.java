@@ -1,35 +1,60 @@
 package com.vee.datastructures.dynprog;
 
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
-import com.vee.datastructures.LinkedList;
-import com.vee.datastructures.LinkedListIterator;
+import org.junit.Test;
 
 public class SubSets {
 
-	public static void main(String[] args) {
-		Set<Integer> s= new HashSet<Integer>();
-		for (int i = 1; i <= 16; i++) {
-			s.add(i);
-		}
-		subsets(s);
-	}
-	
-	static void subsets(Set<Integer> s) {
-		Integer []a = s.toArray(new Integer[0]);
-		int i =0;
-		LinkedList<String> list = new LinkedList<String>();
-		list.insert("");
-		while(i < a.length) {
-			LinkedList<String> alist = new LinkedList<String>();
-			LinkedListIterator<String> it = list.iterator();
-			while(it.hasNext()) {
-				alist.insert(it.getNext() + " " + a[i]);
+	public Set<List<String>> subsetsFast(List<String> list) {
+		Set<List<String>> powerset = new LinkedHashSet<List<String>>();
+		powerset.add(new ArrayList<String>());
+		for (String s: list) {
+			Set<List<String>> subpowerset = new LinkedHashSet<List<String>>();
+			for (List<String> subset : powerset) {
+				List<String> newSubset = new ArrayList<String>(subset);
+				newSubset.add(s);
+				subpowerset.add(newSubset);
 			}
-			list.join(alist);
-			i++;
+			powerset.addAll(subpowerset);
 		}
-		list.display();
+		return powerset;
+	}
+
+	public Set<List<String>> subsetsSlow(List<String> list) {
+		Set<List<String>> powerset = new LinkedHashSet<List<String>>();
+		for (int i = 0; i < (1 << list.size()); i++) {
+			String s = String.format("%"+list.size()+"s", Integer.toBinaryString(i)).replace(' ', '0');
+			List<String> newSubset = new ArrayList<String>();
+			for (int j = 0; j < s.length(); j++) {
+				if (s.charAt(j) == '1') {
+					newSubset.add(list.get(j));
+				}
+			}
+			powerset.add(newSubset);
+		}
+		return powerset;
+	}
+
+	//java -cp .:/usr/share/java/junit.jar org.junit.runner.JUnitCore [test class name]
+	@Test
+	public void testSubset() {
+		List<String> s= new ArrayList<String>();
+		int n = 10;
+		for (int i = 1; i <= n; i++) {
+			s.add(i+"");
+		}
+		long start = System.nanoTime();
+		subsetsSlow(s);
+		System.out.println(System.nanoTime() - start);
+		start = System.nanoTime();
+		Set<List<String>> powerset = subsetsFast(s);
+		System.out.println(System.nanoTime() - start);
+		for (List<String> subset : powerset) {
+			System.out.println(subset);
+		}
 	}
 }
