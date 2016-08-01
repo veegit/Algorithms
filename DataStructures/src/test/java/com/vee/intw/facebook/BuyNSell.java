@@ -117,7 +117,7 @@ public class BuyNSell {
 		a = new int[] { 100, 90, 80, 70, 60, 70, 80, 70, 60, 50, 40 };
 	}
 
-	@Test
+	//@Test
 	public void testBruteWorking() {
 		int[] a = new int[] { 3, 1, 5, 2, 7 };
 		int[] p = new int[] {-1,-1};
@@ -127,7 +127,7 @@ public class BuyNSell {
 		assertEquals(p[1],4);
 	}
 
-	@Test
+	//@Test
 	public void testFastWorking() {
 		int[] a = new int[] { 3, 1, 5, 2, 7 };
 		int[] p = new int[] {-1,-1};
@@ -135,6 +135,28 @@ public class BuyNSell {
 		bs.display(a, p);
 		assertEquals(p[0],1);
 		assertEquals(p[1],4);
+	}
+	
+	public int stockMaxProfit(int[] a) {
+		int min = a[0];
+		int max = a[0];
+		int maxProfit = Integer.MIN_VALUE;
+		int i = 1;
+		while (i < a.length) {
+			min = Math.min(a[i], min);
+			max = min == a[i] ? max : Math.max(a[i], max);
+			maxProfit = Math.max(maxProfit, max-min);
+			i++;
+		}
+		return maxProfit;
+	}
+	
+	@Test
+	public void testStockMaxProfit() {
+		int[] a = new int[] { 3, 1, 5, 2, 7, 6, 0, 10 };
+		BuyNSell bs = new BuyNSell();
+		int max = bs.stockMaxProfit(a);
+		assertEquals(max, 10);
 	}
 
 }

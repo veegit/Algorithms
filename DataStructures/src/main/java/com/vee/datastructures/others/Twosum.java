@@ -2,12 +2,16 @@ package com.vee.datastructures.others;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
+
+import org.testng.annotations.Test;
 
 public class Twosum {
 
@@ -71,6 +75,15 @@ public class Twosum {
 	
 	public static void main(String[] args) {
 		new Twosum();
+	}
+	
+	@Test
+	public void testTwoSum() {
+		Set<Integer> store = new HashSet<>();
+		int sum = 7;
+		List<Integer> array = Arrays.asList(2,3,4,5);
+		array.stream().forEach(i -> store.add(sum - i));
+		array.stream().filter(i -> store.contains(i)).forEach(i -> {System.out.println(i + "," + (sum-i)); store.remove(sum-i); });
 	}
 
 }
