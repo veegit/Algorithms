@@ -123,7 +123,7 @@ public class LinkedList<M extends Object> {
 		Node<M> n = new Node<M>();
 		n = header.getLink();
 		while(n.getLink() != null) {
-			System.out.println(n.getData());
+			System.out.print(n.getData() + " -> ");
 			n = n.getLink();
 		}
 		System.out.println(n.getData());

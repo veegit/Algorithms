@@ -33,6 +33,15 @@ public class BTVisible {
 			TreeNode<Integer> _8 = new TreeNode<Integer>(8);
 			TreeNode<Integer> _9 = new TreeNode<Integer>(9);
 			
+			/*
+			 				1
+			 			4
+			 		2
+			 	3
+			 5		6
+			  
+			 */
+			
 			_1.setLeft(_4);
 			_4.setLeft(_2);
 			_2.setLeft(_3);
@@ -52,13 +61,23 @@ public class BTVisible {
 			TreeNode<Integer> _7 = new TreeNode<Integer>(7);
 			TreeNode<Integer> _8 = new TreeNode<Integer>(8);
 			TreeNode<Integer> _9 = new TreeNode<Integer>(9);
+			TreeNode<Integer> _10 = new TreeNode<Integer>(10);
+			TreeNode<Integer> _11 = new TreeNode<Integer>(11);
+
+			
+			/*
+			 				9
+			 			8		7
+			 		6				5
+			 	10						11
+			 */
 			
 			_9.setLeft(_8);
 			_9.setRight(_7);
 			_8.setLeft(_6);
 			_7.setRight(_5);
-			_6.setLeft(new TreeNode<Integer>(_9));
-			_5.setRight(new TreeNode<Integer>(_9));
+			_6.setLeft(_10);
+			_5.setRight(_11);
 			System.out.println(new BTVisible().visible(_9));
 		}
 	}

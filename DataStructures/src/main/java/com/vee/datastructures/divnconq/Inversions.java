@@ -1,13 +1,18 @@
 package com.vee.datastructures.divnconq;
 
 import java.io.InputStreamReader;
+import java.util.AbstractMap;
 import java.util.Comparator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Inversions<M> implements Comparator<M> {
 	  private M[] numbers;
 	  private M[] helper;
 	  long num = 0;
+	  int fMax = Integer.MIN_VALUE;
+	  int sMax = Integer.MIN_VALUE;
+	  int maxDiff = Integer.MIN_VALUE;
 
 	  private int number;
 
@@ -48,12 +53,16 @@ public class Inversions<M> implements Comparator<M> {
 	      if (compare(helper[i],helper[j]) <= 0) {
 	        numbers[k] = helper[i];
 	        i++;
+	        //System.out.println(String.format("\tnum=%d, i=%d, middle+1=%d, j=%d, num[i]=%d, num[j]=%d", num, i, middle+1, j, helper[i-1], helper[j]));
+	        fMax = Math.max(fMax, (Integer) helper[j]);
+	        sMax = Math.max(sMax, (Integer) helper[i-1]);
 	      } else {
 	        numbers[k] = helper[j];
 	        j++;
 	        /**
 	         * This is where inversions are counted
 	         */
+	        //System.out.println(String.format("num=%d, i=%d, middle+1=%d, j=%d, num[i]=%d, num[j]=%d", num, i, middle+1, j-1, helper[i], helper[j-1]));
 	        num = num + middle + 1 - i;
 	      }
 	      k++;

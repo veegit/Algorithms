@@ -20,14 +20,14 @@ public class BTLevelTraversal {
 			count--;
 			newcount += add(q,node.getLeft()) + add(q,node.getRight());
 			System.out.print(node.getData() + " ");
-			if(count == 0) {
+			if(count == 0) { //TODO Trick is to check for zero or empty
 				System.out.println();
 				count = newcount;
 				newcount = 0;
 			}
 		}
 	}
-	
+
 	private int add(Queue<TreeNode<Integer>> q, TreeNode<Integer> n) {
 		if(n == null)
 			return 0;

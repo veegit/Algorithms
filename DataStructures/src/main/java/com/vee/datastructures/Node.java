@@ -11,15 +11,24 @@ public class Node<M extends Object> {
 	public void setData(M data) {
 		this.data = data;
 	}
-	Node<M> getLink() {
+	public Node<M> getLink() {
 		return link;
 	}
-	void setLink(Node<M> link) {
+	public void setLink(Node<M> link) {
 		this.link = link;
 	}
 	
 	public Node() {
 		
+	}
+	
+	@Override
+	public String toString() {
+		if (data == null) {
+			return "";
+		} else {
+			return data.toString();
+		}
 	}
 
 }

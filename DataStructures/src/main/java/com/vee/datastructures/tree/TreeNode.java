@@ -1,5 +1,7 @@
 package com.vee.datastructures.tree;
 
+import java.util.function.Function;
+
 import com.vee.datastructures.Node;
 
 public class TreeNode<M extends Object> extends Node<M> {
@@ -36,4 +38,11 @@ public class TreeNode<M extends Object> extends Node<M> {
 		this.setData(node.getData());
 	}
 	
+	public void preorder(TreeNode<M> node) {
+		if(node == null)
+			return;
+		System.out.print(node.getData() +  " ");
+		preorder(node.getLeft());
+		preorder(node.getRight());
+	}
 }

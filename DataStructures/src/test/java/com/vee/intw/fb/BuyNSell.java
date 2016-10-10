@@ -1,4 +1,4 @@
-package com.vee.intw.facebook;
+package com.vee.intw.fb;
 
 import static org.junit.Assert.assertEquals;
 
