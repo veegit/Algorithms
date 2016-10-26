@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 /**
  * @author narayanan_venkiteswaran, bragboy
- * @see <a href="http://www.technicalypto.com/2010/04/trie-data-structure-part-2-node-and.html">Blog</a> 
+ * @see <a href="http://tech.bragboy.com/2010/04/trie-data-structure-part-2-node-and.html">Blog</a> 
  */
 
 public class Trie {
