@@ -40,10 +40,11 @@ public class MaxSubArray {
 
 	public static void main(String[] args) {
 		int a[] = new int[]{-2,-3,-3,-4,-2,-2,-1,-5,-4};
-		a = new int[] {-2,1,-3,4,-1,2,1,-5,-4};
+		//a = new int[] {-2,1,-3,4,-1,2,1,-5,-4};
 		System.out.println(kadaneMaxSum(a));
 		System.out.println(kadaneMaxSumZero(a));
-		maxProd(a);
+		System.out.println(maxSum(a));
+		//maxProd(a);
 	}
 
 	static int maxSum(int a[]) {

@@ -25,6 +25,7 @@ public class ReverseLinkedList {
 	static Node<Integer> reverseInPlace(Node<Integer> node) {
 		Node<Integer> prev = null;
 		Node<Integer> current = node.getLink();
+		System.out.println(current);
 		Node<Integer> next = null;
 		while (current != null) {
 			next = current.getLink();

@@ -2,6 +2,9 @@ package com.vee.datastructures.tree;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -49,6 +52,55 @@ public class MedianMaintenance {
 	
 	public static void main(String[] args) {
 		new MedianMaintenance().treeBased();
+	}
+	
+	void heapBased() {
+		long sum = 0, cnt =0;
+		try {
+			Scanner scan = new Scanner(new File(FILENAME));
+			Queue<Integer> minHeap = new PriorityQueue<Integer>();
+			Queue<Integer> maxHeap = new PriorityQueue<Integer>((Integer i1, Integer i2) -> i2.compareTo(i1));
+			int median;
+			while(scan.hasNextInt()) {
+				int num = scan.nextInt();
+				Integer max = maxHeap.peek();
+				Integer min = minHeap.peek();
+				boolean smallerThanMax = max == null || max - num > 0;
+				boolean largerThanMin = min == null || num - min > 0;
+				int diff = maxHeap.size() - minHeap.size();
+				if (diff >= 0) {
+					if (largerThanMin) {
+						minHeap.add(num);
+					} else if (smallerThanMax) {
+						minHeap.offer(maxHeap.poll());
+						maxHeap.add(num);
+					} else {
+						minHeap.add(num);
+					}
+				} else if (diff < 0) {
+					if (smallerThanMax) {
+						maxHeap.add(num);
+					} else if (largerThanMin) {
+						maxHeap.offer(minHeap.poll());
+						minHeap.add(num);
+					} else {
+						maxHeap.add(num);
+					}
+				}
+				diff = maxHeap.size() - minHeap.size();
+				if (diff == 0) {
+					median = (maxHeap.peek() + minHeap.peek())/2;
+				} else if (diff <0) {
+					median = minHeap.peek();
+				} else {
+					median = maxHeap.peek();
+				}
+				System.out.println(median);
+			}
+			System.out.println(cnt + " " + sum % cnt);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

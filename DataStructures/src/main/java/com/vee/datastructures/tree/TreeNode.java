@@ -45,4 +45,12 @@ public class TreeNode<M extends Object> extends Node<M> {
 		preorder(node.getLeft());
 		preorder(node.getRight());
 	}
+	
+	public void postorder(TreeNode<M> node) {
+		if(node == null)
+			return;
+		postorder(node.getLeft());
+		postorder(node.getRight());
+		System.out.print(node.getData() +  " ");
+	}
 }

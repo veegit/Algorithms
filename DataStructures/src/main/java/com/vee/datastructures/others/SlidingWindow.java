@@ -41,5 +41,8 @@ public class SlidingWindow {
 			}
 			System.out.println(minwindow.get(front));
 		}
+		for (int i : minwindow) {
+			System.out.print(i + " ");
+		}
 	}
 }

@@ -15,7 +15,8 @@ public class Test2 {
 	public static void main(String[] args) {
 		
 		//testStringEquals();
-		testFib();
+		//testFib();
+		System.out.println(strStr("mississippi","issippi"));
 	}
 	
 	public static void episodeList() throws IOException {
@@ -113,5 +114,36 @@ public class Test2 {
 	
 	public int pow(int a, int b) {
 		return 0;
+	}
+	
+
+	public static int strStr(String haystack, String needle) {
+		char[] hArr = haystack.toCharArray();
+		char[] nArr = needle.toCharArray();
+		if (hArr.length == 0 && nArr.length == 0) {
+			return 0;
+		} else if (hArr.length == 0 || nArr.length == 0) {
+			return -1;
+		}
+		for (int i = 0; i < hArr.length; i++) {
+			int k = i;
+			if (hArr[k] == nArr[0]) {
+				int j = 1;k++;
+				while (j < nArr.length && nArr.length- j < hArr.length - k) {
+					System.out.println(String.format("i=%d, j=%d, k=%d", i,j,k));
+					if (hArr[k] == nArr[j]) {
+						k++;
+						j++;
+					} else {
+						break;
+					}
+				}
+				System.out.println(String.format(" i=%d, j=%d, k=%d", i,j,k));
+				if (j == nArr.length) {
+					return i;
+				}
+			}
+		}
+		return -1;
 	}
 }
