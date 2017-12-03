@@ -3,21 +3,17 @@ package com.vee.test;
 public class Test1 {
 
 	public static void main(String[] args) {
-
-		//runTime();
-		//print(300);
-		int n = 4;
-		int mask[] = new int [n]; /* Guess what this is */
-		int i;
-		for (i = 0; i < n; ++i) {
-			mask[i] = 0;
-		}
-		/* Print the first set */
-		printv(mask, n);
-		/* Print all the others */
-		while (next(mask, n)) {
-			printv(mask, n);
-		}
+		System.out.println(getBitStringForInt(3));
+		
+	}
+	
+	public static String getBitStringForInt(int n)  {
+	    StringBuilder rtn = new StringBuilder();
+	    for (int i = 32; i >= 0; i--) {
+	        int v = (1 << i) & n;
+	        rtn.append(v != 1 ? "1" : "0");
+	    }
+	    return rtn.toString();
 	}
 
 	static void printv(int mask[], int n) {
