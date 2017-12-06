@@ -1,5 +1,0 @@
-4 2
-24 one
-12 two
-8 three
-6 four

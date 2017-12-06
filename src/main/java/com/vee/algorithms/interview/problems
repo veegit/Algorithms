@@ -1,0 +1,22 @@
+//interview = microsoft
+1a. A bipartite graph, find which vertieces subsume connecgtion forom other ver
+ other vertex
+ q1->d1
+ q1->d2
+ q2->d2
+ q2->d3
+ q3->d3
+q3 subset of q1
+q2 and q1 share some results
+ 
+1b. Levenshtein distance
+2. Dutch national flag sort - use 3 index to track the position
+3. Convert Binary Tree to a tree whose siblings are connected
+4. Delete linkedlist node
+
+=====================================
+1. Binary search + find first element
+2. Boggle
+3. permutation + find unique w/o using hasmap
+4. indent to a tree
+5. DAG -> find a node which is invalidated
