@@ -137,7 +137,6 @@ public class Test2 {
 		System.out.println(ranges);
 	}
 	
-
 	public static int strStr(String haystack, String needle) {
 		char[] hArr = haystack.toCharArray();
 		char[] nArr = needle.toCharArray();
