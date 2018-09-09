@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
+
+import org.junit.Test;
 
 
 /**
@@ -77,9 +81,9 @@ bus car 1 4 truck 6 8
  */
 
 //interview = two sigma
-public class AlphaNumSort extends BaseSort {
+public class AlphaNumSort {
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String text = scan.nextLine();
 		String splits[] = text.split("\\s");
@@ -93,146 +97,35 @@ public class AlphaNumSort extends BaseSort {
 				alpha.add(new Alpha(splits[i],i));
 			}
 		}
-		new AlphaNumSort(i,alpha.toArray(new Alpha[0]),num.toArray(new Num[0]));
-
-	}
-
-	public AlphaNumSort(int count, Alpha[] alpha, Num[] num) {
-		String[] alphanums = new String[count];
-		Alpha[] aarray = alpha;
-		int size = alpha.length;
-		runQuickSort_First(aarray, 0,size - 1);
-		Num[] narray = num;
-		size = num.length;
-		runQuickSort_First(narray, 0,size - 1);
-		for (int i = 0; i < aarray.length; i++) {
-			alphanums[aarray[i].getPosition()] =
-					aarray[i].getValue();
-		}
-		for (int i = 0; i < narray.length; i++) {
-			alphanums[narray[i].getPosition()] = narray[i].getValue()+"";
-		}
-		for (int i = 0; i < alphanums.length; i++) {
-			System.out.print(alphanums[i] + " ");
-		}
-	}
-
-	void runQuickSort_First(AlphaNum[] array, int low, int high){
-		if(low >= high) {
-			return;
-		}
-		int index = partition(array, low,high);
-		runQuickSort_First(array, low,index-1);
-		runQuickSort_First(array, index+1,high);
-	}
-
-	int partition(AlphaNum[] array, int low,int high) {
-		int i = low+1, j = low+1;
-		AlphaNum pivot = array[low];
-		while(i<=high) {
-			if(compare(array[i],pivot)<0) {
-				exchange(array,i,j);
-				j++;
-			}
-			i++;
-		}
-		exchange(array,low,j-1);// exchange rightmost element less than p
-		return j-1;
-	}
-
-	public int compare(AlphaNum o1, AlphaNum o2) {
-		if(o1 instanceof Alpha) {
-			return ((Alpha) o1).getValue().compareTo(((Alpha) o2).getValue());
-		} else {
-			return ((Num) o1).getValue()- ((Num) o2).getValue();
-		}
-	}
-
-	public void alphaNumSort(String s) {
-		String a[] = s.split("\\W+");
-		ArrayList<String> alpha = new ArrayList<String>();
-		ArrayList<Integer> num = new ArrayList<Integer>();
-		boolean isAlpha[] = new boolean[a.length];
-		for (int i = 0; i<a.length; i++) {
+	}*/
+	
+	@Test
+	public void sort() {
+		String input = "car truck 8 4 bus 6 1";
+		String []in = input.split("\\s+");
+		List<String> alpha = new ArrayList<>();
+		List<Integer> num = new ArrayList<>();
+		List<String> alphanum = new ArrayList<>();
+		for (String i : in) {
 			try {
-				Integer in = Integer.parseInt(a[i]);
-				num.add(in);
-				isAlpha[i] = false;
+				Integer n = Integer.parseInt(i);
+				num.add(n);
 			} catch (NumberFormatException e) {
-				alpha.add(a[i]);
-				isAlpha[i] = true;
+				alpha.add(i);
 			}
 		}
-		Collections.sort(alpha, new Comparator<String>() {
-			public int compare(String o1, String o2) {
-				return o1.compareToIgnoreCase(o2);
-			}
-		});
+		Collections.sort(alpha);
 		Collections.sort(num);
-		Iterator<String> ia = alpha.iterator();
-		Iterator<Integer> in = num.iterator();
-		for (boolean b : isAlpha) {
-			if (b) {
-				System.out.println(ia.next());
-			} else {
-				System.out.println(in.next());
+		for (String i : in) {
+			try {
+				Integer.parseInt(i);
+				alphanum.add(num.remove(0).toString());
+			} catch (NumberFormatException e) {
+				alphanum.add(alpha.remove(0));
 			}
 		}
-	}
-
-}
-
-class Alpha extends AlphaNum {
-	private String value;
-	
-	public Alpha(String value, int position) {
-		this.value = value;
-		this.position = position;
-	}
-	public String getValue() {
-		return value;
-	}
-	public void setValue(String value) {
-		this.value = value;
+		String s = alphanum.stream().collect(Collectors.joining(" "));
+		System.out.println(s);
 	}
 }
-
-class Num extends AlphaNum{
-	private int value;
-	
-	public Num(int value, int position) {
-		this.value = value;
-		this.position = position;
-	}
-	public int getValue() {
-		return value;
-	}
-	public void setValue(int value) {
-		this.value = value;
-	}
-}
-
-abstract class AlphaNum {
-	protected int position;
-	
-	public int getPosition() {
-		return position;
-	}
-	public void setPosition(int position) {
-		this.position = position;
-	}
-}
-
-abstract class BaseSort {
-
-	protected void exchange(AlphaNum[] array, int i, int j) {
-		AlphaNum temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-		int position = array[i].getPosition();
-		array[i].setPosition(array[j].getPosition());
-		array[j].setPosition(position);
-	}
-}
-
 

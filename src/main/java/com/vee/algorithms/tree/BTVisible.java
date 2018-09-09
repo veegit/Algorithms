@@ -1,5 +1,7 @@
 package com.vee.algorithms.tree;
 
+import java.util.Optional;
+
 import com.vee.algorithms.datastructures.TreeNode;
 
 public class BTVisible {
@@ -8,7 +10,23 @@ public class BTVisible {
 	 * Find the number of "visible" nodes in a binary tree. A node is a
 	 * "visible" node if the path from root to that node does not encounter any
 	 * node of value higher than that node.
-	 */
+	 * 
+	 *  * A tree is binary
+ * Find number of visible nodes
+ * A node is visible if each of its parent values are less than it
+ * A root is always visible
+ * All nodes less than root are not visible
+ * e.g
+ *         5
+ *      /     \
+ *     3       10
+ *    / \      / 
+ *   20  21    1
+ *   
+ *   5,10,20,21 = 4
+ *
+interview = icims
+*/
 	int visible(TreeNode<Integer> root) {
 		return visible(root,root.getData());
 	}

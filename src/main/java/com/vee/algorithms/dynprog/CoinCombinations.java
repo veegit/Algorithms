@@ -13,6 +13,13 @@ import java.util.List;
  * TODO
  */
 public class CoinCombinations {
+	
+	public static void main(String[] args) {
+		CoinCombinations c = new CoinCombinations();
+		System.out.println(c.minNumOfCombinations(new int[]{2, 5, 3, 6}, 10));
+		System.out.println(c.numOfCombinations(new int[]{2, 5, 3, 6}, 10));
+		System.out.println(c.numOfCombinations2D(new int[]{2, 3, 5}, 5));
+	}
 
 	/*
 	 * 
@@ -36,7 +43,37 @@ public class CoinCombinations {
 					1, n = 0
 					f(n, k - 1) + f(n - ak, k). else
 	 */
-	public List<String> numOfCombinations() {
-		return null;
+	public int numOfCombinations(int[] coins, int amount) {
+		int[] dp = new int[amount + 1];
+		Arrays.fill(dp, 0);
+		dp[0] = 1;
+		for (int i = 0; i < coins.length; i++) {
+			for (int j =coins[i]; j <= amount ; j++) {
+				dp[j] += dp[j-coins[i]];
+			}
+		}
+		return dp[amount];
+	}
+	
+	public int numOfCombinations2D(int[] coins, int amount) {
+		int[][] dp = new int[amount + 1][coins.length];
+		// Fill the enteries for 0 value case (n = 0)
+		for (int i = 0; i < coins.length; i++) {
+			dp[0][i] = 1;
+		}
+		for (int i =1; i < amount+1 ; i++) {
+			for (int j = 0; j < coins.length; j++) {
+				// Count of solutions including coins[j]
+				int x = 0;
+				if (i - coins[j] >= 0) {
+					x = dp[i - coins[j]][j];
+				}
+
+				// Count of solutions excluding coins[j]
+				int y = (j >= 1) ? dp[i][j - 1] : 0;
+				dp[i][j] = x + y;
+			}
+		}
+		return dp[amount][coins.length-1];
 	}
 }

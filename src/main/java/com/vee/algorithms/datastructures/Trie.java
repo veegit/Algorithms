@@ -77,7 +77,25 @@ public class Trie {
 		return current;
 	}
 	
+	private int findNodeIndex(String s) {
+		TrieNode current = root;
+		int i = 0;
+		for (i = 0; i < s.length(); i++) {
+			char ch = s.charAt(i);
+			TrieNode node = current.find(ch);
+			if (node == null)
+				return i;
+			else
+				current = node;
+		}
+		return i;
+	}
+	
 	public static void main(String args[]) {
+		testPalindromePairs();
+	}
+	
+	static void testAutoComplete() {
 		Trie t = new Trie();
 		try(BufferedReader bf = new BufferedReader(new FileReader("/tmp/words_alpha.txt"))) {
 			String word;
@@ -91,6 +109,34 @@ public class Trie {
 		List<String> results = t.autocomplete("quintes", 10);
 		System.out.println("Results in " + (System.nanoTime() - time) / 1000D + " micrsoseconds");
 		System.out.println(results);
+	}
+	
+	static void testPalindromePairs() {
+		String strs[] = new String[] {"code", "edoc", "da", "d"};//[(0, 1), (1, 0), (2, 3)].
+		Trie t = new Trie();
+		for (String s : strs) {
+			t.insert(new StringBuilder(s).reverse().toString());
+		}
+		System.out.println(isPalindrome("aba"));
+		System.out.println(isPalindrome("abba"));
+		System.out.println(isPalindrome("abc"));
+		System.out.println(isPalindrome("abca"));
+		for (String s : strs) {
+			int n = t.findNodeIndex(s);
+			boolean isPairPal = s.length() == n || (isPalindrome(s.substring(n, s.length())));
+			System.out.println(s + " " + s.substring(0, n) + " " + isPairPal);
+		}
+	}
+	
+	static boolean isPalindrome(String s) {
+		int l = 0;
+		int r = s.length()-1;
+		while (l <= r) {
+			if (s.charAt(l++) != s.charAt(r--)) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
 

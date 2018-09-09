@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class SubSets {
 
-	public Set<List<String>> subsetsFast(List<String> list) {
+	public Set<List<String>> powerSetNormal(List<String> list) {
 		Set<List<String>> powerset = new LinkedHashSet<List<String>>();
 		powerset.add(new ArrayList<String>());
 		for (String s: list) {
@@ -24,7 +24,7 @@ public class SubSets {
 		return powerset;
 	}
 
-	public Set<List<String>> subsetsSlow(List<String> list) {
+	public Set<List<String>> powerSetBinary(List<String> list) {
 		Set<List<String>> powerset = new LinkedHashSet<List<String>>();
 		for (int i = 0; i < (1 << list.size()); i++) {
 			String s = String.format("%"+list.size()+"s", Integer.toBinaryString(i)).replace(' ', '0');
@@ -38,6 +38,18 @@ public class SubSets {
 		}
 		return powerset;
 	}
+	
+	public boolean subSetSumRecursion(int[] a, int sum) {
+		return false;
+	}
+	
+	public boolean subSetSum2D(int[] a, int sum) {
+		return false;
+	}
+	
+	public List<List<Integer>> subSetSum(int[] a, int sum) {
+		return new ArrayList<>();
+	}
 
 	//java -cp .:/usr/share/java/junit.jar org.junit.runner.JUnitCore [test class name]
 	@Test
@@ -48,10 +60,10 @@ public class SubSets {
 			s.add(i+"");
 		}
 		long start = System.nanoTime();
-		subsetsSlow(s);
+		powerSetBinary(s);
 		System.out.println(System.nanoTime() - start);
 		start = System.nanoTime();
-		Set<List<String>> powerset = subsetsFast(s);
+		Set<List<String>> powerset = powerSetNormal(s);
 		System.out.println(System.nanoTime() - start);
 		for (List<String> subset : powerset) {
 			System.out.println(subset);
