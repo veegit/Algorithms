@@ -10,9 +10,11 @@ import java.io.Serializable;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -35,7 +37,7 @@ public class Trie {
 			TrieNode node = current.find(ch);
 			if(node == null) {
 				node = new TrieNode(ch, current.wordTillNow + ch);
-				current.children.add(node);
+				current.children.put(ch, node);
 			}
 			current = node;
 			if(i == s.length()-1)
@@ -59,7 +61,7 @@ public class Trie {
 				list.add(node.wordTillNow);
 				count--;
 			}
-			q.addAll(node.children);
+			q.addAll(node.children.values());
 		}
 		return list;
 	}
@@ -92,12 +94,13 @@ public class Trie {
 	}
 	
 	public static void main(String args[]) {
-		testPalindromePairs();
+		testAutoComplete();
+		//testPalindromePairs();
 	}
 	
 	static void testAutoComplete() {
 		Trie t = new Trie();
-		try(BufferedReader bf = new BufferedReader(new FileReader("/tmp/words_alpha.txt"))) {
+		try(BufferedReader bf = new BufferedReader(new FileReader("/usr/share/dict/words"))) {
 			String word;
 			while ((word = bf.readLine()) != null) {
 				t.insert(word);
@@ -146,24 +149,18 @@ class TrieNode implements Serializable {
 	boolean isWord;
 	char content;
 	String wordTillNow;
-	List<TrieNode> children;
+	Map<Character, TrieNode> children;
 	
 	public TrieNode(char c, String s){
 		content = c;
 		isWord = false;
 		wordTillNow = s;
-		children = new LinkedList<TrieNode>();
+		children = new HashMap<>();
 	}
 	
 	/* Watch the return statements */
 	public TrieNode find(char c) {
-		TrieNode node = null;
-		for (Iterator<TrieNode> iterator = children.iterator(); iterator.hasNext();) {
-			node = iterator.next();
-			if(node.content == c)
-				return node;
-		}
-		return null;
+		return children.get(c);
 	}
 
 	public String toString() {

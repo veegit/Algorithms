@@ -18,5 +18,6 @@ public class MissingNumber {
 				arr[arr[i]] = arr[i];
 			}
 		}
+		return 0;
 	}
 }

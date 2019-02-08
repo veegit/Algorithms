@@ -29,7 +29,7 @@ public class DailyCoding {
 			String token = tokens[i];
 			int tabCount = token.lastIndexOf("\t")+1;
 			String word = token.substring(tabCount);
-			System.out.print(word + " " + tabCount + " " + lastTabCount + " " + max + " " + length + "-> ");
+			//System.out.print(word + " " + tabCount + " " + lastTabCount + " " + max + " " + length + "-> ");
 			if (tabCount <= lastTabCount) {
 				max = Math.max(max, length);
 				for (int k =lastTabCount ; k <= tabCount; k++) {
@@ -38,7 +38,7 @@ public class DailyCoding {
 				length = stack.peek().second();
 			}
 			length += word.length()+1;
-			System.out.println(word + " " + tabCount + " " + lastTabCount + " " + max + " " + length);
+			//System.out.println(word + " " + tabCount + " " + lastTabCount + " " + max + " " + length);
 			stack.push(Pair.of(word, length));
 			lastTabCount = tabCount;
 		}
@@ -172,5 +172,26 @@ public class DailyCoding {
 	 */
 	public void problem30_heightOfWater() {
 		
+	}
+
+	@Test
+	/*
+	Given a list of words, return the shortest unique prefix of each word. For example, given the list:
+
+	dog
+	cat
+	apple
+	apricot
+	fish
+	Return the list:
+
+	d
+	c
+	app
+	apr
+	f
+	*/
+	public void problem162_uniquePrefix() {
+
 	}
 }

@@ -1,5 +1,10 @@
 package com.vee.algorithms.datastructures;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class TreeNode<M extends Object> extends Node<M> {
@@ -50,5 +55,30 @@ public class TreeNode<M extends Object> extends Node<M> {
 		postorder(node.getLeft());
 		postorder(node.getRight());
 		System.out.print(node.getData() +  " ");
+	}
+
+	public void levelTraversal() {
+		Deque<TreeNode<M>> q = new ArrayDeque<>();
+		q.offer(this);
+		int count = 1;
+		int newCount = 0;
+		while (!q.isEmpty()) {
+			TreeNode<M> n = q.poll();
+			count--;
+			if (n.getLeft() != null) {
+				newCount++;
+				q.offer(n.getLeft());
+			}
+			if (n.getRight() != null) {
+				newCount++;
+				q.offer(n.getRight());
+			}
+			System.out.print(n.getData() + " ");
+			if (count == 0) {
+				System.out.println();
+				count = newCount;
+				newCount = 0;
+			}
+		}
 	}
 }

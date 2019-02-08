@@ -52,9 +52,10 @@ public class CakeDuplicateFiles {
 	}
 
 	private String calcMd5(File f) {
-		try(InputStream i = new FileInputStream(f)) {
+		/*try(InputStream i = new FileInputStream(f)) {
 			return DigestUtils.md5Hex(i);
-		}
+		}*/
+		return "";
 	}
 
 	private Pair<String, String> createPair(File f1, File f2) {

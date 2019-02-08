@@ -16,7 +16,7 @@ public class CoinCombinations {
 	
 	public static void main(String[] args) {
 		CoinCombinations c = new CoinCombinations();
-		System.out.println(c.minNumOfCombinations(new int[]{2, 5, 3, 6}, 10));
+		System.out.println(c.minNumOfCoins(new int[]{2, 5, 3, 6}, 10));
 		System.out.println(c.numOfCombinations(new int[]{2, 5, 3, 6}, 10));
 		System.out.println(c.numOfCombinations2D(new int[]{2, 3, 5}, 5));
 	}
@@ -24,7 +24,7 @@ public class CoinCombinations {
 	/*
 	 * 
 	 */
-	public int minNumOfCombinations(int[] coins, int amount) {
+	public int minNumOfCoins(int[] coins, int amount) {
 		int max = amount + 1;
 		int[] dp = new int[amount + 1];
 		Arrays.fill(dp, max);
