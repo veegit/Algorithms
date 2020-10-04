@@ -22,7 +22,7 @@ public class BTLevelTraversal {
 			count--;
 			newcount += add(q,node.getLeft()) + add(q,node.getRight());
 			System.out.print(node.getData() + " ");
-			if(count == 0) { //TODO Trick is to check for zero or empty
+			if(count == 0) { //NOTE Trick is to check for zero or empty
 				System.out.println();
 				count = newcount;
 				newcount = 0;

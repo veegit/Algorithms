@@ -46,7 +46,7 @@ public class BlockedQueuePrinter implements IPrinter {
 		public void run() {
 			while(true) {
 				if(!buffer.isEmpty()) {
-					//TODO track discarded events
+					//FIXME track discarded events
 
 					//Process Event
 					process(buffer.poll());
@@ -70,7 +70,6 @@ public class BlockedQueuePrinter implements IPrinter {
 	}
 
 	public void close() {
-		//TODO Do we need to have a closed flag
 		buffer.notifyAll();
 		try {
 			dispatcher.join();
@@ -83,7 +82,7 @@ public class BlockedQueuePrinter implements IPrinter {
 		close();
 	}
 
-	//TODO setBufferSize
+	//FIXME setBufferSize
 	public void setBufferSize() {
 
 	}

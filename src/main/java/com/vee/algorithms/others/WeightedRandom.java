@@ -6,7 +6,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-//TODO Fix the logic
+//FIXME Fix the logic
 public class WeightedRandom<T> {
 	
 	public T getRandomItem(List<Item<T>> items) {
