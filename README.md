@@ -1,188 +1,188 @@
 Hierarchy of problems
 
 src/main/java/com/vee/algorithms
-├── [cache](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/cache)  
-│  └── [LRU.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/cache/LRU.java)  
-├── [concurrency](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency)  
-│  ├── [BlockedQueuePrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/BlockedQueuePrinter.java)  
-│  ├── [GenericPrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/GenericPrinter.java)  
-│  ├── [IPrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/IPrinter.java)  
-│  ├── [NonBlockingStack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/NonBlockingStack.java)  
-│  ├── [ThreadExternalMergeSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/ThreadExternalMergeSort.java)  
-│  ├── [ThreadSafeCircularQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/ThreadSafeCircularQueue.java)  
-│  ├── [ThreadSafeQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/ThreadSafeQueue.java)  
-│  └── [Tracker.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/Tracker.java)  
-├── [dailycoding](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dailycoding)  
-│  └── [DailyCoding.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dailycoding/DailyCoding.java)  
-├── [datastructures](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures)  
-│  ├── [BST.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/BST.java)  
-│  ├── [BinaryHeap.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/BinaryHeap.java)  
-│  ├── [CircularQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/CircularQueue.java)  
-│  ├── [Edge.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/Edge.java)  
-│  ├── [LinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedList.java)  
-│  ├── [LinkedListIterator.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedListIterator.java)  
-│  ├── [LinkedQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedQueue.java)  
-│  ├── [LinkedStack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedStack.java)  
-│  ├── [MedianMaintenance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/MedianMaintenance.java)  
-│  ├── [Node.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/Node.java)  
-│  ├── [PersistentStack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/PersistentStack.java)  
-│  ├── [RedBlackTree.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/RedBlackTree.java)  
-│  ├── [RedBlackTreeNode.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/RedBlackTreeNode.java)  
-│  ├── [TreeNode.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/TreeNode.java)  
-│  └── [Trie.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/Trie.java)  
-├── [disjoinset](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset)  
-│  ├── [DisjointSet.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSet.java)  
-│  ├── [DisjointSetArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSetArray.java)  
-│  ├── [DisjointSetLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSetLinkedList.java)  
-│  └── [DisjointSetNode.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSetNode.java)  
-├── [distributions](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions)  
-│  ├── [Poisson.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions/Poisson.java)  
-│  ├── [PrimeSieve.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions/PrimeSieve.java)  
-│  └── [RandomDistribution.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions/RandomDistribution.java)  
-├── [divnconq](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq)  
-│  ├── [ArrIndexValueEq.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/ArrIndexValueEq.java)  
-│  ├── [Inversions.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/Inversions.java)  
-│  ├── [LongestPathMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/LongestPathMatrix.java)  
-│  ├── [RotatedBinarySearch.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/RotatedBinarySearch.java)  
-│  ├── [SortedRange.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/SortedRange.java)  
-│  └── [Unimodal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/Unimodal.java)  
-├── [dynprog](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog)  
-│  ├── [ActivitySelection.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/ActivitySelection.java)  
-│  ├── [CoinCombinations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/CoinCombinations.java)  
-│  ├── [EditDistance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/EditDistance.java)  
-│  ├── [EncodingCombinations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/EncodingCombinations.java)  
-│  ├── [Knapsack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/Knapsack.java)  
-│  ├── [LCSubstr.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/LCSubstr.java)  
-│  ├── [MaxNonAdjacentArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/MaxNonAdjacentArray.java)  
-│  ├── [MaxSumSubArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/MaxSumSubArray.java)  
-│  ├── [PriorityJobScheduling.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/PriorityJobScheduling.java)  
-│  ├── [Sequence.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/Sequence.java)  
-│  ├── [SubSets.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/SubSets.java)  
-│  └── [WordBreak.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/WordBreak.java)  
-├── [graph](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph)  
-│  ├── [BFS.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/BFS.java)  
-│  ├── [DFS.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/DFS.java)  
-│  ├── [DetectCycles.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/DetectCycles.java)  
-│  ├── [DjikstraAssignment.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/DjikstraAssignment.java)  
-│  ├── [KosarajuSCC.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/KosarajuSCC.java)  
-│  ├── [Kruskal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/Kruskal.java)  
-│  ├── [MinCut.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/MinCut.java)  
-│  ├── [Prim.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/Prim.java)  
-│  ├── [SCC.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/SCC.java)  
-│  └── [ShortestPath.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/ShortestPath.java)  
-├── [heap](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/heap)  
-│  ├── [EventStreaming.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/heap/EventStreaming.java)  
-│  └── [KSorted.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/heap/KSorted.java)  
-├── [interview](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview)  
-│  ├── [AlphaNumSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/AlphaNumSort.java)  
-│  ├── [Boggle.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Boggle.java)  
-│  ├── [BookRecommender.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/BookRecommender.java)  
-│  ├── [BuyNSell.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/BuyNSell.java)  
-│  ├── [CatsnDogs.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/CatsnDogs.java)  
-│  ├── [CommonWords.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/CommonWords.java)  
-│  ├── [Concordance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Concordance.java)  
-│  ├── [DetectCycles.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/DetectCycles.java)  
-│  ├── [Floors.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Floors.java)  
-│  ├── [JuggleFest.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/JuggleFest.java)  
-│  ├── [PawnArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/PawnArray.java)  
-│  ├── [PersonalShopper.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/PersonalShopper.java)  
-│  ├── [ReverseBinary.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/ReverseBinary.java)  
-│  ├── [RiceMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/RiceMatrix.java)  
-│  ├── [SyncDC.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/SyncDC.java)  
-│  ├── [TfIDf.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/TfIDf.java)  
-│  ├── [ToDos.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/ToDos.java)  
-│  ├── [WordDistance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/WordDistance.java)  
-│  ├── [Zipfsong.cpp](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Zipfsong.cpp)  
-│  ├── [Zipfsong.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Zipfsong.java)  
-│  └── [problems](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/problems)  
-├── [linkedlist](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist)  
-│  ├── [IntersectionIterator.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/IntersectionIterator.java)  
-│  ├── [ListOfListIterator.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/ListOfListIterator.java)  
-│  ├── [PartitionList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/PartitionList.java)  
-│  ├── [RearrangeLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/RearrangeLinkedList.java)  
-│  ├── [ReverseLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/ReverseLinkedList.java)  
-│  ├── [RotateLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/RotateLinkedList.java)  
-│  └── [XorLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/XorLinkedList.java)  
-├── [others](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others)  
-│  ├── [AssignmentKidsTeachers.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/AssignmentKidsTeachers.java)  
-│  ├── [BinaryMissing.cpp](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/BinaryMissing.cpp)  
-│  ├── [CarCdr.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/CarCdr.java)  
-│  ├── [Combinatorics.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Combinatorics.java)  
-│  ├── [CommonPrefix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/CommonPrefix.java)  
-│  ├── [DecodeWays.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/DecodeWays.java)  
-│  ├── [DiceRoll.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/DiceRoll.java)  
-│  ├── [Duplicates.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Duplicates.java)  
-│  ├── [GameOfLife.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/GameOfLife.java)  
-│  ├── [HammingDistance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/HammingDistance.java)  
-│  ├── [Majority.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Majority.java)  
-│  ├── [MissingNumber.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/MissingNumber.java)  
-│  ├── [ObjectPool.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/ObjectPool.java)  
-│  ├── [Palindrome.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Palindrome.java)  
-│  ├── [RangeConsolidate.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/RangeConsolidate.java)  
-│  ├── [RankListings.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/RankListings.java)  
-│  ├── [RomanNumerals.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/RomanNumerals.java)  
-│  ├── [Shuffle.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Shuffle.java)  
-│  ├── [SlidingWindow.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/SlidingWindow.java)  
-│  ├── [Sqrt.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Sqrt.java)  
-│  ├── [StackQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/StackQueue.java)  
-│  ├── [StringNumber.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/StringNumber.java)  
-│  ├── [StringReverse.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/StringReverse.java)  
-│  ├── [ToeplitzMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/ToeplitzMatrix.java)  
-│  ├── [Twosum.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Twosum.java)  
-│  └── [WeightedRandom.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/WeightedRandom.java)  
-├── [problems](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems)  
-│  ├── [cake](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake)  
-│  │  ├── [CakeDuplicateFiles.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeDuplicateFiles.java)  
-│  │  ├── [CakeExcludedProduct.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeExcludedProduct.java)  
-│  │  ├── [CakeMaxProdSubArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeMaxProdSubArray.java)  
-│  │  ├── [CakeMaxStockPrice.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeMaxStockPrice.java)  
-│  │  ├── [CakeMergeMeetings.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeMergeMeetings.java)  
-│  │  ├── [CakeRepeatingIntegers.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeRepeatingIntegers.java)  
-│  │  └── [CakeStreamingMedian.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeStreamingMedian.java)  
-│  └── [foobar](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar)  
-│    ├── [GooFooBounces.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooBounces.java)  
-│    ├── [GooFooChecksum.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooChecksum.java)  
-│    ├── [GooFooCombinations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooCombinations.java)  
-│    ├── [GooFooCrossings.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooCrossings.java)  
-│    ├── [GooFooKnightMoves.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooKnightMoves.java)  
-│    ├── [GooFooMF.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooMF.java)  
-│    ├── [GooFooPostOrderRoot.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooPostOrderRoot.java)  
-│    ├── [GooFooStringSplit.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooStringSplit.java)  
-│    └── [GooFooTransitiveTriples.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooTransitiveTriples.java)  
-├── [recursion](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion)  
-│  ├── [Anagram.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Anagram.java)  
-│  ├── [Hanoi.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Hanoi.java)  
-│  ├── [MatrixRotate.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/MatrixRotate.java)  
-│  ├── [Permutations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Permutations.java)  
-│  ├── [PhoneNumber.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/PhoneNumber.java)  
-│  ├── [Power.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Power.java)  
-│  ├── [SpiralMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/SpiralMatrix.java)  
-│  └── [WaterDrop.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/WaterDrop.java)  
-├── [sort](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort)  
-│  ├── [BaseSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/BaseSort.java)  
-│  ├── [CountingSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/CountingSort.java)  
-│  ├── [DutchFlagSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/DutchFlagSort.java)  
-│  ├── [ExternalMergeSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/ExternalMergeSort.java)  
-│  ├── [HeapSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/HeapSort.java)  
-│  ├── [MergeSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/MergeSort.java)  
-│  ├── [QuickSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/QuickSort.java)  
-│  ├── [RSelect.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/RSelect.java)  
-│  └── [Sort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/Sort.java)  
-├── [tree](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree)  
-│  ├── [BSTDepth.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTDepth.java)  
-│  ├── [BSTIsBalanced.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTIsBalanced.java)  
-│  ├── [BSTKLargest.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTKLargest.java)  
-│  ├── [BSTValidity.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTValidity.java)  
-│  ├── [BTInvert.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTInvert.java)  
-│  ├── [BTLevelFirstSecond.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTLevelFirstSecond.java)  
-│  ├── [BTLevelTraversal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTLevelTraversal.java)  
-│  ├── [BTMaxSum.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTMaxSum.java)  
-│  ├── [BTPrintAllPaths.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTPrintAllPaths.java)  
-│  ├── [BTSerDeser.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTSerDeser.java)  
-│  ├── [BTSumK.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTSumK.java)  
-│  ├── [BTVisible.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTVisible.java)  
-│  ├── [LCA.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/LCA.java)  
-│  └── [UniVal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/UniVal.java)  
-└── [util](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/util)  
-  ├── [Triple.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/util/Triple.java)  
-  └── [Tuple.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/util/Tuple.java)
+├── [cache](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/cache)<br />
+│  └── [LRU.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/cache/LRU.java)<br />
+├── [concurrency](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency)<br />
+│  ├── [BlockedQueuePrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/BlockedQueuePrinter.java)<br />
+│  ├── [GenericPrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/GenericPrinter.java)<br />
+│  ├── [IPrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/IPrinter.java)<br />
+│  ├── [NonBlockingStack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/NonBlockingStack.java)<br />
+│  ├── [ThreadExternalMergeSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/ThreadExternalMergeSort.java)<br />
+│  ├── [ThreadSafeCircularQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/ThreadSafeCircularQueue.java)<br />
+│  ├── [ThreadSafeQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/ThreadSafeQueue.java)<br />
+│  └── [Tracker.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/Tracker.java)<br />
+├── [dailycoding](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dailycoding)<br />
+│  └── [DailyCoding.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dailycoding/DailyCoding.java)<br />
+├── [datastructures](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures)<br />
+│  ├── [BST.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/BST.java)<br />
+│  ├── [BinaryHeap.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/BinaryHeap.java)<br />
+│  ├── [CircularQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/CircularQueue.java)<br />
+│  ├── [Edge.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/Edge.java)<br />
+│  ├── [LinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedList.java)<br />
+│  ├── [LinkedListIterator.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedListIterator.java)<br />
+│  ├── [LinkedQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedQueue.java)<br />
+│  ├── [LinkedStack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/LinkedStack.java)<br />
+│  ├── [MedianMaintenance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/MedianMaintenance.java)<br />
+│  ├── [Node.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/Node.java)<br />
+│  ├── [PersistentStack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/PersistentStack.java)<br />
+│  ├── [RedBlackTree.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/RedBlackTree.java)<br />
+│  ├── [RedBlackTreeNode.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/RedBlackTreeNode.java)<br />
+│  ├── [TreeNode.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/TreeNode.java)<br />
+│  └── [Trie.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/datastructures/Trie.java)<br />
+├── [disjoinset](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset)<br />
+│  ├── [DisjointSet.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSet.java)<br />
+│  ├── [DisjointSetArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSetArray.java)<br />
+│  ├── [DisjointSetLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSetLinkedList.java)<br />
+│  └── [DisjointSetNode.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/disjoinset/DisjointSetNode.java)<br />
+├── [distributions](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions)<br />
+│  ├── [Poisson.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions/Poisson.java)<br />
+│  ├── [PrimeSieve.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions/PrimeSieve.java)<br />
+│  └── [RandomDistribution.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/distributions/RandomDistribution.java)<br />
+├── [divnconq](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq)<br />
+│  ├── [ArrIndexValueEq.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/ArrIndexValueEq.java)<br />
+│  ├── [Inversions.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/Inversions.java)<br />
+│  ├── [LongestPathMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/LongestPathMatrix.java)<br />
+│  ├── [RotatedBinarySearch.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/RotatedBinarySearch.java)<br />
+│  ├── [SortedRange.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/SortedRange.java)<br />
+│  └── [Unimodal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/divnconq/Unimodal.java)<br />
+├── [dynprog](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog)<br />
+│  ├── [ActivitySelection.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/ActivitySelection.java)<br />
+│  ├── [CoinCombinations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/CoinCombinations.java)<br />
+│  ├── [EditDistance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/EditDistance.java)<br />
+│  ├── [EncodingCombinations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/EncodingCombinations.java)<br />
+│  ├── [Knapsack.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/Knapsack.java)<br />
+│  ├── [LCSubstr.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/LCSubstr.java)<br />
+│  ├── [MaxNonAdjacentArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/MaxNonAdjacentArray.java)<br />
+│  ├── [MaxSumSubArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/MaxSumSubArray.java)<br />
+│  ├── [PriorityJobScheduling.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/PriorityJobScheduling.java)<br />
+│  ├── [Sequence.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/Sequence.java)<br />
+│  ├── [SubSets.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/SubSets.java)<br />
+│  └── [WordBreak.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/dynprog/WordBreak.java)<br />
+├── [graph](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph)<br />
+│  ├── [BFS.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/BFS.java)<br />
+│  ├── [DFS.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/DFS.java)<br />
+│  ├── [DetectCycles.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/DetectCycles.java)<br />
+│  ├── [DjikstraAssignment.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/DjikstraAssignment.java)<br />
+│  ├── [KosarajuSCC.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/KosarajuSCC.java)<br />
+│  ├── [Kruskal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/Kruskal.java)<br />
+│  ├── [MinCut.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/MinCut.java)<br />
+│  ├── [Prim.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/Prim.java)<br />
+│  ├── [SCC.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/SCC.java)<br />
+│  └── [ShortestPath.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/graph/ShortestPath.java)<br />
+├── [heap](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/heap)<br />
+│  ├── [EventStreaming.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/heap/EventStreaming.java)<br />
+│  └── [KSorted.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/heap/KSorted.java)<br />
+├── [interview](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview)<br />
+│  ├── [AlphaNumSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/AlphaNumSort.java)<br />
+│  ├── [Boggle.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Boggle.java)<br />
+│  ├── [BookRecommender.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/BookRecommender.java)<br />
+│  ├── [BuyNSell.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/BuyNSell.java)<br />
+│  ├── [CatsnDogs.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/CatsnDogs.java)<br />
+│  ├── [CommonWords.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/CommonWords.java)<br />
+│  ├── [Concordance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Concordance.java)<br />
+│  ├── [DetectCycles.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/DetectCycles.java)<br />
+│  ├── [Floors.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Floors.java)<br />
+│  ├── [JuggleFest.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/JuggleFest.java)<br />
+│  ├── [PawnArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/PawnArray.java)<br />
+│  ├── [PersonalShopper.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/PersonalShopper.java)<br />
+│  ├── [ReverseBinary.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/ReverseBinary.java)<br />
+│  ├── [RiceMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/RiceMatrix.java)<br />
+│  ├── [SyncDC.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/SyncDC.java)<br />
+│  ├── [TfIDf.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/TfIDf.java)<br />
+│  ├── [ToDos.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/ToDos.java)<br />
+│  ├── [WordDistance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/WordDistance.java)<br />
+│  ├── [Zipfsong.cpp](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Zipfsong.cpp)<br />
+│  ├── [Zipfsong.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/Zipfsong.java)<br />
+│  └── [problems](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/interview/problems)<br />
+├── [linkedlist](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist)<br />
+│  ├── [IntersectionIterator.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/IntersectionIterator.java)<br />
+│  ├── [ListOfListIterator.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/ListOfListIterator.java)<br />
+│  ├── [PartitionList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/PartitionList.java)<br />
+│  ├── [RearrangeLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/RearrangeLinkedList.java)<br />
+│  ├── [ReverseLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/ReverseLinkedList.java)<br />
+│  ├── [RotateLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/RotateLinkedList.java)<br />
+│  └── [XorLinkedList.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/linkedlist/XorLinkedList.java)<br />
+├── [others](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others)<br />
+│  ├── [AssignmentKidsTeachers.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/AssignmentKidsTeachers.java)<br />
+│  ├── [BinaryMissing.cpp](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/BinaryMissing.cpp)<br />
+│  ├── [CarCdr.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/CarCdr.java)<br />
+│  ├── [Combinatorics.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Combinatorics.java)<br />
+│  ├── [CommonPrefix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/CommonPrefix.java)<br />
+│  ├── [DecodeWays.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/DecodeWays.java)<br />
+│  ├── [DiceRoll.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/DiceRoll.java)<br />
+│  ├── [Duplicates.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Duplicates.java)<br />
+│  ├── [GameOfLife.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/GameOfLife.java)<br />
+│  ├── [HammingDistance.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/HammingDistance.java)<br />
+│  ├── [Majority.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Majority.java)<br />
+│  ├── [MissingNumber.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/MissingNumber.java)<br />
+│  ├── [ObjectPool.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/ObjectPool.java)<br />
+│  ├── [Palindrome.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Palindrome.java)<br />
+│  ├── [RangeConsolidate.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/RangeConsolidate.java)<br />
+│  ├── [RankListings.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/RankListings.java)<br />
+│  ├── [RomanNumerals.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/RomanNumerals.java)<br />
+│  ├── [Shuffle.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Shuffle.java)<br />
+│  ├── [SlidingWindow.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/SlidingWindow.java)<br />
+│  ├── [Sqrt.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Sqrt.java)<br />
+│  ├── [StackQueue.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/StackQueue.java)<br />
+│  ├── [StringNumber.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/StringNumber.java)<br />
+│  ├── [StringReverse.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/StringReverse.java)<br />
+│  ├── [ToeplitzMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/ToeplitzMatrix.java)<br />
+│  ├── [Twosum.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/Twosum.java)<br />
+│  └── [WeightedRandom.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/others/WeightedRandom.java)<br />
+├── [problems](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems)<br />
+│  ├── [cake](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake)<br />
+│  │  ├── [CakeDuplicateFiles.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeDuplicateFiles.java)<br />
+│  │  ├── [CakeExcludedProduct.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeExcludedProduct.java)<br />
+│  │  ├── [CakeMaxProdSubArray.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeMaxProdSubArray.java)<br />
+│  │  ├── [CakeMaxStockPrice.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeMaxStockPrice.java)<br />
+│  │  ├── [CakeMergeMeetings.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeMergeMeetings.java)<br />
+│  │  ├── [CakeRepeatingIntegers.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeRepeatingIntegers.java)<br />
+│  │  └── [CakeStreamingMedian.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/cake/CakeStreamingMedian.java)<br />
+│  └── [foobar](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar)<br />
+│    ├── [GooFooBounces.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooBounces.java)<br />
+│    ├── [GooFooChecksum.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooChecksum.java)<br />
+│    ├── [GooFooCombinations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooCombinations.java)<br />
+│    ├── [GooFooCrossings.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooCrossings.java)<br />
+│    ├── [GooFooKnightMoves.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooKnightMoves.java)<br />
+│    ├── [GooFooMF.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooMF.java)<br />
+│    ├── [GooFooPostOrderRoot.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooPostOrderRoot.java)<br />
+│    ├── [GooFooStringSplit.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooStringSplit.java)<br />
+│    └── [GooFooTransitiveTriples.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/problems/foobar/GooFooTransitiveTriples.java)<br />
+├── [recursion](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion)<br />
+│  ├── [Anagram.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Anagram.java)<br />
+│  ├── [Hanoi.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Hanoi.java)<br />
+│  ├── [MatrixRotate.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/MatrixRotate.java)<br />
+│  ├── [Permutations.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Permutations.java)<br />
+│  ├── [PhoneNumber.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/PhoneNumber.java)<br />
+│  ├── [Power.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/Power.java)<br />
+│  ├── [SpiralMatrix.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/SpiralMatrix.java)<br />
+│  └── [WaterDrop.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/recursion/WaterDrop.java)<br />
+├── [sort](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort)<br />
+│  ├── [BaseSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/BaseSort.java)<br />
+│  ├── [CountingSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/CountingSort.java)<br />
+│  ├── [DutchFlagSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/DutchFlagSort.java)<br />
+│  ├── [ExternalMergeSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/ExternalMergeSort.java)<br />
+│  ├── [HeapSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/HeapSort.java)<br />
+│  ├── [MergeSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/MergeSort.java)<br />
+│  ├── [QuickSort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/QuickSort.java)<br />
+│  ├── [RSelect.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/RSelect.java)<br />
+│  └── [Sort.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/sort/Sort.java)<br />
+├── [tree](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree)<br />
+│  ├── [BSTDepth.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTDepth.java)<br />
+│  ├── [BSTIsBalanced.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTIsBalanced.java)<br />
+│  ├── [BSTKLargest.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTKLargest.java)<br />
+│  ├── [BSTValidity.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BSTValidity.java)<br />
+│  ├── [BTInvert.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTInvert.java)<br />
+│  ├── [BTLevelFirstSecond.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTLevelFirstSecond.java)<br />
+│  ├── [BTLevelTraversal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTLevelTraversal.java)<br />
+│  ├── [BTMaxSum.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTMaxSum.java)<br />
+│  ├── [BTPrintAllPaths.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTPrintAllPaths.java)<br />
+│  ├── [BTSerDeser.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTSerDeser.java)<br />
+│  ├── [BTSumK.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTSumK.java)<br />
+│  ├── [BTVisible.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/BTVisible.java)<br />
+│  ├── [LCA.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/LCA.java)<br />
+│  └── [UniVal.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/tree/UniVal.java)<br />
+└── [util](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/util)<br />
+  ├── [Triple.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/util/Triple.java)<br />
+  └── [Tuple.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/util/Tuple.java)<br />
