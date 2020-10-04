@@ -45,14 +45,15 @@ public class CoinCombinations {
 	 */
 	public int numOfCombinations(int[] coins, int amount) {
 		int[] dp = new int[amount + 1];
-		Arrays.fill(dp, 0);
 		dp[0] = 1;
-		for (int i = 0; i < coins.length; i++) {
-			for (int j =coins[i]; j <= amount ; j++) {
-				dp[j] += dp[j-coins[i]];
+		for (int i = 1; i <= amount; i++) {
+			for (int j = 0; j < coins.length; j++) {
+				if (coins[j] <= i) {
+					dp[i] = dp[i] + dp[i - coins[j]] //way to sum upto is count of solutions excluding Jth coin (dp[i]) and including Jth coin (dp[i-coins[j]])
+				}
 			}
 		}
-		return dp[amount];
+		return dp[amount]
 	}
 	
 	public int numOfCombinations2D(int[] coins, int amount) {
