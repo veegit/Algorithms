@@ -49,11 +49,11 @@ public class CoinCombinations {
 		for (int i = 1; i <= amount; i++) {
 			for (int j = 0; j < coins.length; j++) {
 				if (coins[j] <= i) {
-					dp[i] = dp[i] + dp[i - coins[j]] //way to sum upto is count of solutions excluding Jth coin (dp[i]) and including Jth coin (dp[i-coins[j]])
+					dp[i] = dp[i] + dp[i - coins[j]]; //way to sum upto is count of solutions excluding Jth coin (dp[i]) and including Jth coin (dp[i-coins[j]])
 				}
 			}
 		}
-		return dp[amount]
+		return dp[amount];
 	}
 	
 	public int numOfCombinations2D(int[] coins, int amount) {
