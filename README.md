@@ -3,9 +3,7 @@ Hierarchy of problems
 src/main/java/com/vee/algorithms
 
 ├── [cache](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/cache)
-
 │   └── [LRU.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/cache/LRU.java)
-
 ├── [concurrency](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency)
 │   ├── [BlockedQueuePrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/BlockedQueuePrinter.java)
 │   ├── [GenericPrinter.java](https://github.com/veegit/Algorithms/blob/master/src/main/java/com/vee/algorithms/concurrency/GenericPrinter.java)
