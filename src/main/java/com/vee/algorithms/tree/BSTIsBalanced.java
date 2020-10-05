@@ -8,7 +8,6 @@ import com.vee.algorithms.datastructures.TreeNode;
 /**
  * @author vee
  * @version 1.0
- * TODO
  * Tree is balanced if 
  * - left is balanced,
  * - right is balanced,

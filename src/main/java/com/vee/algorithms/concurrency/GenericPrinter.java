@@ -39,7 +39,7 @@ public class GenericPrinter implements IPrinter{
 
 			/*
 			 * if blocking then wait for a buffer notification
-			 * TODO Check Thread  interrupt and isDispatcher
+			 * FIXME Check Thread  interrupt and isDispatcher
 			 */
 			if(blocking) {
 				try {
@@ -82,12 +82,12 @@ public class GenericPrinter implements IPrinter{
 						}
 
 						if(bufferSize > 0) {
-							//TODO track discarded events
+							//FIXME track discarded events
 							events = new String[bufferSize];
 							//Add the events from buffer to array
 							buffer.toArray(events);
 
-							//TODO add discarded events to end of array
+							//FIXME add discarded events to end of array
 
 							//Clear Buffer
 							buffer.clear();
@@ -127,7 +127,7 @@ public class GenericPrinter implements IPrinter{
 	}
 
 	public void close() {
-		//TODO Do we need to have a closed flag
+		//FIXME Do we need to have a closed flag
 		synchronized (buffer) {
 			buffer.notifyAll();
 		}
@@ -143,7 +143,7 @@ public class GenericPrinter implements IPrinter{
 		close();
 	}
 
-	//TODO setBufferSize
+	//FIXME setBufferSize
 	public void setBufferSize() {
 
 	}

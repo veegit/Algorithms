@@ -115,13 +115,13 @@ done
  *
 **/
 
+//TODO - Solve Problem
 //interview = two sigma
 
 public class SyncDC {
 	
 	public static void main(String[] args) {
-		/* TODO
-		 * Copy the code from the file you submitted
+		 /* Copy the code from the file you submitted
 		 */
 	}
 

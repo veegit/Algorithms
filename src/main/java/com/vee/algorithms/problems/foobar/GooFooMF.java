@@ -120,7 +120,7 @@ public class GooFooMF {
 			newCount+=2;
 			q.offer(l);
 			q.offer(r);
-			if(count == 0) { //TODO Trick is to check for zero or empty
+			if(count == 0) { //NOTE Trick is to check for zero or empty
 				count = newCount;
 				newCount = 0;
 				level++;

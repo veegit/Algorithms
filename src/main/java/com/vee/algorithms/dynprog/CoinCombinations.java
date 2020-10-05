@@ -10,7 +10,6 @@ import java.util.List;
  * i.  Find mininum number of coins to reach value V
  * ii. Fine number of combinations to reach value V
  * 
- * TODO
  */
 public class CoinCombinations {
 	

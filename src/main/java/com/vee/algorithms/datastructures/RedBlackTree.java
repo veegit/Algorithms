@@ -2,9 +2,7 @@ package com.vee.algorithms.datastructures;
 
 import java.util.Comparator;
 import java.util.Random;
-/*
- * TODO
- */
+
 public class RedBlackTree<M extends Object> implements Comparator<M>{
 
 	private RedBlackTreeNode<M> root;

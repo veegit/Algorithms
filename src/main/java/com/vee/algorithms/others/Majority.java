@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-/* TODO
+/* 
  * Majority of an array is a number occuring more than 50% of the size of array
  */
 public class Majority {
